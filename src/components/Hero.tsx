@@ -72,21 +72,21 @@ export const Hero = () => {
   const { displayed, done } = useTypewriter("UniveSIA", 120, 300);
 
   return (
-    <section id="inicio" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-16 sm:pt-20 pb-16 bg-[hsl(220_60%_98%)]">
+    <section id="inicio" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-16 sm:pt-20 pb-16 bg-[hsl(145_50%_97%)]">
       {/* Large gradient orbs */}
-      <div className="absolute -top-32 -right-32 w-[700px] h-[700px] bg-gradient-to-bl from-[hsl(213_100%_50%_/_0.12)] via-[hsl(230_90%_60%_/_0.08)] to-transparent rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '8s' }} />
-      <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-gradient-to-tr from-[hsl(260_80%_60%_/_0.10)] via-[hsl(200_90%_60%_/_0.06)] to-transparent rounded-full blur-[80px] animate-pulse" style={{ animationDuration: '10s' }} />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-gradient-to-b from-[hsl(213_100%_50%_/_0.06)] to-transparent rounded-full blur-[60px]" />
+      <div className="absolute -top-32 -right-32 w-[700px] h-[700px] bg-gradient-to-bl from-[hsl(145_65%_42%_/_0.12)] via-[hsl(160_70%_50%_/_0.08)] to-transparent rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '8s' }} />
+      <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-gradient-to-tr from-[hsl(160_70%_36%_/_0.10)] via-[hsl(140_60%_50%_/_0.06)] to-transparent rounded-full blur-[80px] animate-pulse" style={{ animationDuration: '10s' }} />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-gradient-to-b from-[hsl(145_65%_42%_/_0.06)] to-transparent rounded-full blur-[60px]" />
 
       {/* Grid pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, hsl(213 100% 50%) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, hsl(145 65% 42%) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
       {/* Floating geometric shapes */}
       <div className="absolute top-20 left-[10%] w-16 h-16 border-2 border-primary/10 rounded-2xl rotate-12 float-animation" style={{ animationDelay: '0s' }} />
       <div className="absolute top-40 right-[15%] w-12 h-12 bg-primary/5 rounded-full float-animation" style={{ animationDelay: '1.5s' }} />
       <div className="absolute bottom-32 left-[20%] w-10 h-10 border-2 border-primary/8 rounded-lg rotate-45 float-animation" style={{ animationDelay: '3s' }} />
-      <div className="absolute bottom-48 right-[10%] w-14 h-14 border-2 border-[hsl(260_80%_60%_/_0.1)] rounded-full float-animation" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-[60%] left-[5%] w-8 h-8 bg-[hsl(260_80%_60%_/_0.05)] rounded-lg rotate-12 float-animation" style={{ animationDelay: '4s' }} />
+      <div className="absolute bottom-48 right-[10%] w-14 h-14 border-2 border-primary/10 rounded-full float-animation" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-[60%] left-[5%] w-8 h-8 bg-primary/5 rounded-lg rotate-12 float-animation" style={{ animationDelay: '4s' }} />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
