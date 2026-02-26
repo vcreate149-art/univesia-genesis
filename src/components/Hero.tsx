@@ -124,12 +124,12 @@ export const Hero = () => {
               >
                 Começar Projeto <ArrowRight size={18} />
               </Link>
-              <button
-                onClick={() => document.getElementById("como-funciona")?.scrollIntoView({ behavior: "smooth" })}
+              <Link
+                to="/planos"
                 className="glass-btn px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-semibold inline-flex items-center justify-center gap-2"
               >
-                <Play size={18} /> Ver Como Funciona
-              </button>
+                Ver Planos
+              </Link>
             </div>
           </div>
 
