@@ -1,9 +1,18 @@
-import { useState, FormEvent } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { CONFIG } from "@/config";
 import { supabase } from "@/integrations/supabase/client";
 import { Send, MessageCircle, Mail, Linkedin, Calendar, Loader2, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
+
+const countryDialCodes: Record<string, string> = {
+  BR: "+55", US: "+1", GB: "+44", DE: "+49", FR: "+33", PT: "+351", ES: "+34",
+  IT: "+39", AR: "+54", MX: "+52", CO: "+57", CL: "+56", PE: "+51", UY: "+598",
+  PY: "+595", CA: "+1", AU: "+61", JP: "+81", CN: "+86", IN: "+91", KR: "+82",
+  SG: "+65", AE: "+971", IL: "+972", ZA: "+27", NG: "+234", NL: "+31", BE: "+32",
+  CH: "+41", AT: "+43", SE: "+46", NO: "+47", DK: "+45", FI: "+358", PL: "+48",
+  IE: "+353", NZ: "+64", CZ: "+420", RO: "+40", HU: "+36", GR: "+30", TR: "+90",
+};
 
 const projectTypes = [
   "Website / Landing Page",
@@ -37,6 +46,20 @@ export const Contact = () => {
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  useEffect(() => {
+    fetch("https://ipapi.co/json/")
+      .then((r) => r.json())
+      .then((data) => {
+        if (data?.country_code) {
+          const ddi = countryDialCodes[data.country_code] || "";
+          if (ddi && !form.whatsapp) {
+            setForm((f) => ({ ...f, whatsapp: ddi + " " }));
+          }
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
