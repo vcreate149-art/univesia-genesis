@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { getTechIcon } from "@/components/TechIcons";
 import { X, ExternalLink } from "lucide-react";
 
 const categories = ["Todos", "Websites", "Sistemas", "Mobile", "Automações", "IA"];
@@ -116,7 +117,10 @@ export const Portfolio = () => {
                     <p className="text-sm text-muted-foreground mb-3">{p.desc}</p>
                     <div className="flex flex-wrap gap-1.5">
                       {p.tech.map((t) => (
-                        <span key={t} className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary/70">{t}</span>
+                        <span key={t} className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary/70 inline-flex items-center gap-1">
+                          <span className="text-primary">{getTechIcon(t)}</span>
+                          {t}
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -142,7 +146,10 @@ export const Portfolio = () => {
             <p className="text-muted-foreground text-sm mb-4">{selected.detail}</p>
             <div className="flex flex-wrap gap-2 mb-6">
               {selected.tech.map((t) => (
-                <span key={t} className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary/80">{t}</span>
+                <span key={t} className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary/80 inline-flex items-center gap-1">
+                  <span className="text-primary">{getTechIcon(t)}</span>
+                  {t}
+                </span>
               ))}
             </div>
             <Link
