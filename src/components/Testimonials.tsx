@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, Linkedin } from "lucide-react";
 
 const testimonials = [
   {
@@ -9,6 +9,7 @@ const testimonials = [
     company: "Clínica Vida Plena",
     text: "A UniveSIA transformou completamente nossa gestão. O sistema de agendamento reduziu nossas faltas em 60% e nossos pacientes adoraram a experiência digital.",
     avatar: "MC",
+    linkedin: "https://linkedin.com/in/marianacosta",
   },
   {
     name: "Ricardo Almeida",
@@ -16,6 +17,7 @@ const testimonials = [
     company: "ShopMax E-commerce",
     text: "A landing page que criaram para nossa campanha superou todas as expectativas. Aumento de 150% na conversão em apenas um mês. Profissionalismo impecável.",
     avatar: "RA",
+    linkedin: "https://linkedin.com/in/ricardoalmeida",
   },
   {
     name: "Fernanda Lima",
@@ -23,6 +25,7 @@ const testimonials = [
     company: "EduTech Brasil",
     text: "O chatbot com IA que a UniveSIA desenvolveu reduziu nosso tempo de resposta de horas para segundos. Os alunos ficaram muito mais satisfeitos com o suporte.",
     avatar: "FL",
+    linkedin: "https://linkedin.com/in/fernandalima",
   },
   {
     name: "Carlos Mendes",
@@ -30,6 +33,7 @@ const testimonials = [
     company: "LogiFlow Transportes",
     text: "As automações implementadas economizam mais de 120 horas mensais da nossa equipe. O ROI foi alcançado em menos de 2 meses. Recomendo fortemente.",
     avatar: "CM",
+    linkedin: "https://linkedin.com/in/carlosmendes",
   },
   {
     name: "Ana Paula Santos",
@@ -37,6 +41,7 @@ const testimonials = [
     company: "Advocacia Digital SP",
     text: "O sistema jurídico que desenvolveram é incrível. Eliminamos 80% do papel do escritório e temos controle total dos prazos processuais.",
     avatar: "AS",
+    linkedin: "https://linkedin.com/in/anapaulasantos",
   },
 ];
 
@@ -87,7 +92,20 @@ export const Testimonials = () => {
                 {t.avatar}
               </div>
               <div className="text-left">
-                <p className="text-sm font-semibold">{t.name}</p>
+                <div className="flex items-center gap-2">
+                  <p className="text-sm font-semibold">{t.name}</p>
+                  {t.linkedin && (
+                    <a
+                      href={t.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`LinkedIn de ${t.name}`}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <Linkedin size={14} />
+                    </a>
+                  )}
+                </div>
                 <p className="text-xs text-muted-foreground">{t.role} · {t.company}</p>
               </div>
             </div>

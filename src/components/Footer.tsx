@@ -5,9 +5,9 @@ import { Instagram, Linkedin, Github, Mail } from "lucide-react";
 const footerLinks = {
   navegacao: [
     { label: "Início", href: "/" },
-    { label: "Como Funciona", href: "/" },
+    { label: "Serviços", href: "/servicos" },
     { label: "Portfólio", href: "/portfolio" },
-    { label: "Sobre", href: "/sobre" },
+    { label: "Blog", href: "/blog" },
   ],
   servicos: [
     { label: "Websites", href: "/servicos" },
@@ -18,6 +18,7 @@ const footerLinks = {
   contato: [
     { label: CONFIG.social.email, href: `mailto:${CONFIG.social.email}`, external: true },
     { label: "WhatsApp", href: `https://wa.me/${CONFIG.whatsapp.number}`, external: true },
+    { label: "FAQ", href: "/faq" },
   ],
 };
 
@@ -91,7 +92,21 @@ export const Footer = () => {
         <div className="border-t border-border pt-6" />
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>© 2026 UniveSIA. Todos os direitos reservados.</p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <p>© 2026 {CONFIG.company.name}. Todos os direitos reservados.</p>
+            <span className="hidden sm:inline">·</span>
+            <p>CNPJ: {CONFIG.company.cnpj}</p>
+            <span className="hidden sm:inline">·</span>
+            <p>{CONFIG.company.address}</p>
+          </div>
+          <div className="flex items-center gap-4">
+            <Link to="/privacidade" className="hover:text-primary transition-colors">
+              Política de Privacidade
+            </Link>
+            <Link to="/termos" className="hover:text-primary transition-colors">
+              Termos de Uso
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

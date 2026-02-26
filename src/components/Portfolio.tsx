@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { getTechIcon } from "@/components/TechIcons";
-import { X, ExternalLink } from "lucide-react";
+import { X, ExternalLink, TrendingUp } from "lucide-react";
 
 const categories = ["Todos", "Websites", "Sistemas", "Mobile", "Automações", "IA"];
 
@@ -12,7 +12,13 @@ const projects = [
     category: "Sistemas",
     desc: "Sistema de gestão para clínicas médicas",
     tech: ["React", "Node.js", "PostgreSQL"],
-    detail: "Plataforma completa para gestão de clínicas com agendamento, prontuários eletrônicos e faturamento. Reduziu o tempo de atendimento em 40%.",
+    challenge: "A clínica enfrentava atrasos, faltas frequentes e prontuários em papel, gerando ineficiência e perda de receita.",
+    solution: "Desenvolvemos uma plataforma completa com agendamento inteligente, prontuários eletrônicos e faturamento integrado.",
+    results: [
+      { label: "Redução de faltas", value: "-60%" },
+      { label: "Tempo de atendimento", value: "-40%" },
+      { label: "Satisfação dos pacientes", value: "+85%" },
+    ],
     color: "from-primary/20 to-secondary/20",
   },
   {
@@ -20,7 +26,13 @@ const projects = [
     category: "Websites",
     desc: "Landing page de alta conversão para e-commerce",
     tech: ["Next.js", "Tailwind CSS", "Vercel"],
-    detail: "Landing page otimizada que aumentou a taxa de conversão em 150% em 30 dias. Design focado em mobile-first com A/B testing integrado.",
+    challenge: "O e-commerce tinha taxa de conversão abaixo de 1% e alto custo de aquisição de clientes via tráfego pago.",
+    solution: "Criamos uma landing page mobile-first com design persuasivo, A/B testing integrado e otimização de velocidade.",
+    results: [
+      { label: "Taxa de conversão", value: "+150%" },
+      { label: "Custo por aquisição", value: "-35%" },
+      { label: "Tempo de carregamento", value: "1.2s" },
+    ],
     color: "from-secondary/20 to-primary/20",
   },
   {
@@ -28,7 +40,13 @@ const projects = [
     category: "Sistemas",
     desc: "Sistema jurídico de processos digitais",
     tech: ["Vue.js", "Python", "Django"],
-    detail: "Digitalização completa de processos jurídicos, com gestão de prazos, documentos e atendimentos. Eliminou 80% do uso de papel.",
+    challenge: "Escritório com 80% dos processos em papel, prazos perdidos e dificuldade em escalar o atendimento.",
+    solution: "Digitalização completa com gestão de prazos automatizada, documentos na nuvem e painel de controle em tempo real.",
+    results: [
+      { label: "Redução de papel", value: "-80%" },
+      { label: "Prazos cumpridos", value: "99.5%" },
+      { label: "Produtividade", value: "+45%" },
+    ],
     color: "from-primary/30 to-transparent",
   },
   {
@@ -36,7 +54,13 @@ const projects = [
     category: "Mobile",
     desc: "App de networking profissional",
     tech: ["React Native", "Firebase", "Node.js"],
-    detail: "Aplicativo de networking com matching inteligente baseado em interesses e localização. Mais de 5.000 downloads no primeiro mês.",
+    challenge: "Dificuldade em conectar profissionais com interesses semelhantes em eventos e conferências.",
+    solution: "App com matching inteligente baseado em interesses, localização e disponibilidade, com chat integrado.",
+    results: [
+      { label: "Downloads (1º mês)", value: "5.000+" },
+      { label: "Matches realizados", value: "12.000+" },
+      { label: "NPS", value: "72" },
+    ],
     color: "from-secondary/30 to-transparent",
   },
   {
@@ -44,7 +68,13 @@ const projects = [
     category: "Automações",
     desc: "Plataforma de automação para PMEs",
     tech: ["n8n", "API REST", "Webhooks"],
-    detail: "Solução de automação que conecta CRM, e-mail marketing e ERP. Economia de 120 horas mensais em processos manuais.",
+    challenge: "Equipe gastava 120+ horas mensais em tarefas repetitivas de entrada de dados entre CRM, e-mail e ERP.",
+    solution: "Fluxos de automação conectando todos os sistemas, com notificações inteligentes e relatórios automatizados.",
+    results: [
+      { label: "Horas economizadas/mês", value: "120h" },
+      { label: "ROI alcançado em", value: "2 meses" },
+      { label: "Erros manuais", value: "-95%" },
+    ],
     color: "from-primary/20 to-secondary/10",
   },
   {
@@ -52,7 +82,13 @@ const projects = [
     category: "IA",
     desc: "Chatbot com IA para atendimento ao cliente",
     tech: ["Python", "LLM", "FastAPI"],
-    detail: "Chatbot inteligente com compreensão de linguagem natural que resolve 70% das solicitações sem intervenção humana.",
+    challenge: "Suporte sobrecarregado com tempo de resposta de horas e alta insatisfação dos clientes.",
+    solution: "Chatbot inteligente com NLP avançado que entende contexto, resolve dúvidas e escala para humanos quando necessário.",
+    results: [
+      { label: "Atendimentos automatizados", value: "70%" },
+      { label: "Tempo de resposta", value: "<5s" },
+      { label: "Satisfação do cliente", value: "+60%" },
+    ],
     color: "from-secondary/20 to-primary/10",
   },
 ];
@@ -82,9 +118,7 @@ export const Portfolio = () => {
               key={cat}
               onClick={() => setFilter(cat)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                filter === cat
-                  ? "gradient-btn"
-                  : "glass-btn"
+                filter === cat ? "gradient-btn" : "glass-btn"
               }`}
             >
               {cat}
@@ -102,13 +136,12 @@ export const Portfolio = () => {
                   className="glass-card overflow-hidden group cursor-pointer hover:border-primary/30 transition-all duration-300"
                   onClick={() => setOpenProject(globalIndex)}
                 >
-                  {/* Preview area */}
                   <div className={`h-40 bg-gradient-to-br ${p.color} flex items-center justify-center relative`}>
                     <span className="text-2xl font-display font-bold text-primary/60 group-hover:text-primary transition-colors">
                       {p.name}
                     </span>
                     <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="text-sm font-medium text-primary">Ver Projeto →</span>
+                      <span className="text-sm font-medium text-primary">Ver Estudo de Caso →</span>
                     </div>
                   </div>
                   <div className="p-5">
@@ -131,7 +164,7 @@ export const Portfolio = () => {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Modal - Case Study */}
       {selected && (
         <div
           className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-background/80 backdrop-blur-sm animate-fade-in"
@@ -142,8 +175,33 @@ export const Portfolio = () => {
               <X size={20} />
             </button>
             <span className="text-xs text-primary/80 mb-2 block">{selected.category}</span>
-            <h3 className="text-xl font-display font-bold mb-3">{selected.name}</h3>
-            <p className="text-muted-foreground text-sm mb-4">{selected.detail}</p>
+            <h3 className="text-xl font-display font-bold mb-4">{selected.name}</h3>
+
+            {/* Case Study Sections */}
+            <div className="space-y-4 mb-6">
+              <div>
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">Desafio</h4>
+                <p className="text-sm text-muted-foreground">{selected.challenge}</p>
+              </div>
+              <div>
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">Solução</h4>
+                <p className="text-sm text-muted-foreground">{selected.solution}</p>
+              </div>
+              <div>
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-primary mb-1 flex items-center gap-1">
+                  <TrendingUp size={14} /> Resultados
+                </h4>
+                <div className="grid grid-cols-3 gap-3 mt-2">
+                  {selected.results.map((r) => (
+                    <div key={r.label} className="text-center bg-primary/5 rounded-lg p-3">
+                      <div className="text-lg font-display font-bold text-primary">{r.value}</div>
+                      <div className="text-[10px] text-muted-foreground mt-0.5">{r.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             <div className="flex flex-wrap gap-2 mb-6">
               {selected.tech.map((t) => (
                 <span key={t} className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary/80 inline-flex items-center gap-1">

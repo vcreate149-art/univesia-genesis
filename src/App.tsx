@@ -5,12 +5,17 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
+import { CookieConsent } from "@/components/CookieConsent";
 import Index from "./pages/Index";
 import ServicosPage from "./pages/ServicosPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import SobrePage from "./pages/SobrePage";
 import PlanosPage from "./pages/PlanosPage";
 import ContatoPage from "./pages/ContatoPage";
+import FAQPage from "./pages/FAQPage";
+import PrivacidadePage from "./pages/PrivacidadePage";
+import TermosPage from "./pages/TermosPage";
+import BlogPage from "./pages/BlogPage";
 import NotFound from "./pages/NotFound";
 import LoginPage from "./pages/admin/LoginPage";
 import AdminLayout from "./pages/admin/AdminLayout";
@@ -35,6 +40,10 @@ function App() {
               <Route path="/sobre" element={<SobrePage />} />
               <Route path="/planos" element={<PlanosPage />} />
               <Route path="/contato" element={<ContatoPage />} />
+              <Route path="/faq" element={<FAQPage />} />
+              <Route path="/privacidade" element={<PrivacidadePage />} />
+              <Route path="/termos" element={<TermosPage />} />
+              <Route path="/blog" element={<BlogPage />} />
               <Route path="/admin/login" element={<LoginPage />} />
               <Route path="/admin" element={<AdminLayout />}>
                 <Route index element={<MessagesPage />} />
@@ -43,6 +52,7 @@ function App() {
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <CookieConsent />
           </BrowserRouter>
         </TooltipProvider>
       </AuthProvider>
