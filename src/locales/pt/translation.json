@@ -242,5 +242,46 @@
         "a": "Aceitamos pagamentos internacionais via transferência bancária (SWIFT), PayPal e cartão de crédito em USD, EUR e BRL. Os orçamentos podem ser apresentados na moeda de sua preferência."
       }
     ]
+  },
+  "blog": {
+    "title": "Nosso",
+    "titleHighlight": "Blog",
+    "subtitle": "Artigos, tutoriais e análises sobre tecnologia, IA e transformação digital.",
+    "comingSoonEmoji": "📝",
+    "comingSoonTitle": "Em breve!",
+    "comingSoonDesc": "Estamos preparando conteúdos incríveis sobre desenvolvimento, IA, automação e tendências do mercado tech.",
+    "comingSoonCta": "Receba novidades"
+  },
+  "privacy": {
+    "title": "Política de",
+    "titleHighlight": "Privacidade",
+    "lastUpdated": "Última atualização: Fevereiro de 2026",
+    "sections": [
+      { "title": "1. Informações que coletamos", "content": "Coletamos informações que você nos fornece diretamente, como nome, e-mail, telefone e mensagens enviadas através do formulário de contato. Também coletamos dados de navegação automaticamente, como endereço IP, tipo de navegador e páginas visitadas." },
+      { "title": "2. Como usamos suas informações", "content": "Utilizamos seus dados para: responder suas solicitações de contato, enviar propostas comerciais, melhorar nossos serviços e cumprir obrigações legais. Não vendemos ou compartilhamos seus dados pessoais com terceiros para fins de marketing." },
+      { "title": "3. Cookies", "content": "Utilizamos cookies essenciais para o funcionamento do site e cookies analíticos para entender como os visitantes interagem com nosso site. Você pode gerenciar suas preferências de cookies a qualquer momento." },
+      { "title": "4. Seus direitos (LGPD)", "content": "De acordo com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você tem direito a: acessar, corrigir, excluir seus dados pessoais, revogar consentimento e solicitar a portabilidade de seus dados." },
+      { "title": "5. Segurança", "content": "Adotamos medidas técnicas e organizacionais adequadas para proteger seus dados pessoais contra acesso não autorizado, perda ou destruição. Utilizamos criptografia SSL e armazenamento seguro de dados." },
+      { "title": "6. Contato", "content": "Para dúvidas sobre esta política, entre em contato." }
+    ]
+  },
+  "terms": {
+    "title": "Termos de",
+    "titleHighlight": "Uso",
+    "lastUpdated": "Última atualização: Fevereiro de 2026",
+    "sections": [
+      { "title": "1. Aceitação dos Termos", "content": "Ao acessar e utilizar o site, você concorda com estes Termos de Uso. Se não concordar com algum termo, recomendamos que não utilize o site." },
+      { "title": "2. Serviços", "content": "Oferecemos serviços de desenvolvimento de software, criação de websites, aplicativos mobile, automações e soluções com inteligência artificial. Os detalhes específicos de cada projeto são definidos em contrato individual." },
+      { "title": "3. Propriedade Intelectual", "content": "Todo o conteúdo do site, incluindo textos, imagens, logotipos e design, é de nossa propriedade e está protegido por leis de propriedade intelectual. A reprodução sem autorização é proibida." },
+      { "title": "4. Responsabilidades do Usuário", "content": "O usuário se compromete a fornecer informações verdadeiras no formulário de contato e a não utilizar o site para fins ilegais ou não autorizados." },
+      { "title": "5. Limitação de Responsabilidade", "content": "Não nos responsabilizamos por danos indiretos decorrentes do uso do site. As informações apresentadas são de caráter informativo e não constituem oferta vinculante." },
+      { "title": "6. Foro", "content": "Fica eleito o foro da comarca de São Paulo/SP para dirimir quaisquer questões relacionadas a estes Termos de Uso." },
+      { "title": "7. Contato", "content": "Dúvidas sobre estes termos? Entre em contato." }
+    ]
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Ops! Página não encontrada",
+    "backHome": "Voltar para o Início"
   }
 }

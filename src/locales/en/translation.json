@@ -212,5 +212,46 @@
       { "q": "Do you serve international clients?", "a": "Yes! We serve clients worldwide. Our team works across multiple time zones and communicates in Portuguese, English, and Spanish." },
       { "q": "How do international payments work?", "a": "We accept international payments via bank transfer (SWIFT), PayPal, and credit card in USD, EUR, and BRL. Budgets can be presented in your preferred currency." }
     ]
+  },
+  "blog": {
+    "title": "Our",
+    "titleHighlight": "Blog",
+    "subtitle": "Articles, tutorials, and insights on technology, AI, and digital transformation.",
+    "comingSoonEmoji": "📝",
+    "comingSoonTitle": "Coming Soon!",
+    "comingSoonDesc": "We're preparing amazing content about development, AI, automation, and tech market trends.",
+    "comingSoonCta": "Get Updates"
+  },
+  "privacy": {
+    "title": "Privacy",
+    "titleHighlight": "Policy",
+    "lastUpdated": "Last updated: February 2026",
+    "sections": [
+      { "title": "1. Information We Collect", "content": "We collect information you provide directly, such as name, email, phone, and messages sent through the contact form. We also automatically collect browsing data such as IP address, browser type, and pages visited." },
+      { "title": "2. How We Use Your Information", "content": "We use your data to: respond to your contact requests, send commercial proposals, improve our services, and comply with legal obligations. We do not sell or share your personal data with third parties for marketing purposes." },
+      { "title": "3. Cookies", "content": "We use essential cookies for website functionality and analytical cookies to understand how visitors interact with our site. You can manage your cookie preferences at any time." },
+      { "title": "4. Your Rights (LGPD)", "content": "Under the General Data Protection Law (Law No. 13,709/2018), you have the right to: access, correct, delete your personal data, revoke consent, and request data portability." },
+      { "title": "5. Security", "content": "We adopt appropriate technical and organizational measures to protect your personal data against unauthorized access, loss, or destruction. We use SSL encryption and secure data storage." },
+      { "title": "6. Contact", "content": "For questions about this policy, please contact us." }
+    ]
+  },
+  "terms": {
+    "title": "Terms of",
+    "titleHighlight": "Use",
+    "lastUpdated": "Last updated: February 2026",
+    "sections": [
+      { "title": "1. Acceptance of Terms", "content": "By accessing and using the website, you agree to these Terms of Use. If you do not agree with any term, we recommend not using the site." },
+      { "title": "2. Services", "content": "We offer software development, website creation, mobile apps, automations, and AI solutions. Specific details of each project are defined in individual contracts." },
+      { "title": "3. Intellectual Property", "content": "All website content, including texts, images, logos, and design, is our property and protected by intellectual property laws. Reproduction without authorization is prohibited." },
+      { "title": "4. User Responsibilities", "content": "The user agrees to provide truthful information in the contact form and not to use the site for illegal or unauthorized purposes." },
+      { "title": "5. Limitation of Liability", "content": "We are not responsible for indirect damages arising from the use of the site. The information presented is for informational purposes and does not constitute a binding offer." },
+      { "title": "6. Jurisdiction", "content": "The court of São Paulo/SP is elected to resolve any issues related to these Terms of Use." },
+      { "title": "7. Contact", "content": "Questions about these terms? Contact us." }
+    ]
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "backHome": "Return to Home"
   }
 }
