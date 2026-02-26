@@ -31,15 +31,15 @@ export const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "glass-card border-b border-primary/10 shadow-lg"
+          ? "bg-background/95 backdrop-blur-sm border-b border-border shadow-sm"
           : "bg-transparent"
       }`}
       role="navigation"
       aria-label="Menu principal"
     >
       <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between h-14 sm:h-16 lg:h-20">
-        <Link to="/" className="text-xl lg:text-2xl font-display font-bold tracking-tight">
-          Unive<span className="text-primary glow-text">SIA</span>
+        <Link to="/" className="text-xl lg:text-2xl font-display font-bold tracking-tight text-foreground">
+          Unive<span className="text-primary">SIA</span>
         </Link>
 
         <div className="hidden lg:flex items-center gap-1">
@@ -78,7 +78,7 @@ export const Navbar = () => {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden glass-card border-t border-primary/10 animate-fade-in max-h-[calc(100dvh-3.5rem)] overflow-y-auto">
+        <div className="lg:hidden bg-background border-t border-border animate-fade-in max-h-[calc(100dvh-3.5rem)] overflow-y-auto">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-1 pb-[calc(1rem+env(safe-area-inset-bottom))]">
             {navLinks.map((link) => (
               <Link

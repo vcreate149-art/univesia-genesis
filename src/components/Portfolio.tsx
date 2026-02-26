@@ -107,7 +107,7 @@ export const Portfolio = () => {
                     <span className="text-2xl font-display font-bold text-primary/60 group-hover:text-primary transition-colors">
                       {p.name}
                     </span>
-                    <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span className="text-sm font-medium text-primary">Ver Projeto →</span>
                     </div>
                   </div>

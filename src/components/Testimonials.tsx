@@ -83,7 +83,7 @@ export const Testimonials = () => {
             </p>
 
             <div className="flex items-center justify-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">
                 {t.avatar}
               </div>
               <div className="text-left">

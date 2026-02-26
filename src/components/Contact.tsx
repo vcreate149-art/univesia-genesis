@@ -81,7 +81,7 @@ export const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-10 max-w-5xl mx-auto">
           {/* Form */}
           <ScrollReveal direction="left" className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="glass-card p-6 md:p-8 space-y-4">
+            <form onSubmit={handleSubmit} className="glass-card p-6 md:p-8 space-y-4 bg-background">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   name="name"
