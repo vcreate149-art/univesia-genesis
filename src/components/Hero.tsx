@@ -145,7 +145,7 @@ export const Hero = () => {
       {/* Scroll indicator */}
       <button
         onClick={() => document.getElementById("como-funciona")?.scrollIntoView({ behavior: "smooth" })}
-        className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 text-primary/40 animate-bounce"
+        className="absolute bottom-4 sm:bottom-8 left-0 right-0 mx-auto w-fit text-primary/40 animate-bounce"
         aria-label="Rolar para baixo"
       >
         <ChevronDown size={28} />
