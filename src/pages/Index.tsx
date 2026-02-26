@@ -5,7 +5,7 @@ import { Services } from "@/components/Services";
 import { Testimonials } from "@/components/Testimonials";
 import { Partners } from "@/components/Partners";
 import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
+
 
 const Index = () => {
   return (
@@ -19,7 +19,7 @@ const Index = () => {
         <Partners />
       </main>
       <Footer />
-      <WhatsAppButton />
+      
     </div>
   );
 };
