@@ -91,7 +91,7 @@ export const Footer = () => {
         <div className="section-divider mb-6" />
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>© 2025 UniveSIA. Todos os direitos reservados.</p>
+          <p>© 2026 UniveSIA. Todos os direitos reservados.</p>
           <p className="inline-flex items-center gap-1">
             Desenvolvido com <Heart size={12} className="text-primary fill-primary" /> pela própria UniveSIA
           </p>
