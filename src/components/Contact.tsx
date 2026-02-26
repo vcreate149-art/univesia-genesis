@@ -47,6 +47,8 @@ const ddiOptions = [
   { code: "+972", flag: "🇮🇱", label: "IL" },
   { code: "+27", flag: "🇿🇦", label: "ZA" },
   { code: "+234", flag: "🇳🇬", label: "NG" },
+  { code: "+258", flag: "🇲🇿", label: "MZ" },
+  { code: "+244", flag: "🇦🇴", label: "AO" },
 ];
 
 const countryCodeToDialCode: Record<string, string> = {};
@@ -94,9 +96,16 @@ export const Contact = () => {
     fetch("https://ipapi.co/json/")
       .then((r) => r.json())
       .then((data) => {
-        if (data?.country_code) {
-          const detected = countryCodeToDialCode[data.country_code];
-          if (detected) setDdi(detected);
+        const detected = countryCodeToDialCode[data?.country_code];
+        if (detected) {
+          setDdi(detected);
+        } else if (data?.country_calling_code) {
+          // Fallback: use API's calling code directly and add to selector if missing
+          const callingCode = data.country_calling_code;
+          setDdi(callingCode);
+          if (!ddiOptions.some((o) => o.code === callingCode)) {
+            ddiOptions.push({ code: callingCode, flag: "🌍", label: data.country_code });
+          }
         }
       })
       .catch(() => {});
