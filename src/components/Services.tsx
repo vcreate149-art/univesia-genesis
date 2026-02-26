@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TiltCard } from "@/components/TiltCard";
+import { getTechIcon } from "@/components/TechIcons";
 import { Globe, Server, Smartphone, Zap, Users, Brain, X } from "lucide-react";
 
 const services = [
@@ -92,7 +93,8 @@ export const Services = () => {
                 <p className="text-sm text-muted-foreground mb-4 flex-1">{s.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {s.tags.map((tag) => (
-                    <span key={tag} className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary/80">
+                    <span key={tag} className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary/80 inline-flex items-center gap-1">
+                      <span className="text-primary">{getTechIcon(tag)}</span>
                       {tag}
                     </span>
                   ))}
@@ -141,7 +143,10 @@ export const Services = () => {
               </div>
               <div className="flex flex-wrap gap-2">
                 {selected.tags.map((tag) => (
-                  <span key={tag} className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary/80">{tag}</span>
+                  <span key={tag} className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary/80 inline-flex items-center gap-1">
+                    <span className="text-primary">{getTechIcon(tag)}</span>
+                    {tag}
+                  </span>
                 ))}
               </div>
             </div>

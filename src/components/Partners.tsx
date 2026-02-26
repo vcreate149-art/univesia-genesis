@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { getTechIcon } from "@/components/TechIcons";
 
 const techLogos = [
   "React", "Node.js", "Python", "Flutter", "AWS", "Google Cloud",
@@ -27,8 +29,9 @@ export const Partners = () => {
             {[...techLogos, ...techLogos].map((tech, i) => (
               <div
                 key={i}
-                className="glass-card px-6 py-3 whitespace-nowrap text-sm text-muted-foreground font-medium hover:text-primary hover:border-primary/30 transition-all shrink-0"
+                className="glass-card px-6 py-3 whitespace-nowrap text-sm text-muted-foreground font-medium hover:text-primary hover:border-primary/30 transition-all shrink-0 inline-flex items-center gap-2"
               >
+                <span className="text-primary">{getTechIcon(tech)}</span>
                 {tech}
               </div>
             ))}
@@ -42,12 +45,12 @@ export const Partners = () => {
           <h3 className="text-2xl md:text-3xl font-display font-bold mb-4">
             Pronto para <span className="text-gradient">transformar</span> seu negócio?
           </h3>
-          <button
-            onClick={() => document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" })}
-            className="gradient-btn px-10 py-4 rounded-full text-base font-semibold"
+          <Link
+            to="/contato"
+            className="gradient-btn px-10 py-4 rounded-full text-base font-semibold inline-block"
           >
             Começar Agora
-          </button>
+          </Link>
         </ScrollReveal>
       </div>
     </section>
