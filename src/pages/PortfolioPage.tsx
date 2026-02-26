@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Portfolio } from "@/components/Portfolio";
 import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const PortfolioPage = () => (
   <div className="min-h-screen bg-background overflow-x-hidden">
@@ -10,7 +9,6 @@ const PortfolioPage = () => (
       <Portfolio />
     </main>
     <Footer />
-    <WhatsAppButton />
   </div>
 );
 
