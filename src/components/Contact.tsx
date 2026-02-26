@@ -1,7 +1,9 @@
 import { useState, FormEvent } from "react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { CONFIG } from "@/config";
+import { supabase } from "@/integrations/supabase/client";
 import { Send, MessageCircle, Mail, Linkedin, Calendar, Loader2, CheckCircle } from "lucide-react";
+import { toast } from "sonner";
 
 const projectTypes = [
   "Website / Landing Page",
@@ -39,11 +41,28 @@ export const Contact = () => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    // Simulated send
-    setTimeout(() => setStatus("success"), 1500);
+
+    const { error } = await supabase.from("contact_messages").insert({
+      name: form.name,
+      email: form.email,
+      whatsapp: form.whatsapp,
+      company: form.company || null,
+      project_type: form.projectType,
+      budget: form.budget || null,
+      timeline: form.timeline || null,
+      message: form.message || null,
+    });
+
+    if (error) {
+      setStatus("error");
+      toast.error("Erro ao enviar mensagem. Tente novamente.");
+    } else {
+      setStatus("success");
+      toast.success("Mensagem enviada com sucesso!");
+    }
   };
 
   return (
