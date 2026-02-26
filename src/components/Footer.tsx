@@ -89,9 +89,7 @@ export const Footer = () => {
           ))}
         </div>
 
-        <div className="border-t border-border pt-6" />
-
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+        <div className="border-t border-border pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p>© 2026 {CONFIG.company.name}. Todos os direitos reservados.</p>
           <div className="flex items-center gap-4">
             <Link to="/privacidade" className="hover:text-primary transition-colors">
