@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { ArrowRight, Play, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import { CONFIG } from "@/config";
 import { Scene3D } from "@/components/Scene3D";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -110,14 +111,14 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => scrollTo("contato")}
+              <Link
+                to="/contato"
                 className="gradient-btn px-8 py-4 rounded-full text-base font-semibold inline-flex items-center justify-center gap-2"
               >
                 Começar Projeto <ArrowRight size={18} />
-              </button>
+              </Link>
               <button
-                onClick={() => scrollTo("como-funciona")}
+                onClick={() => document.getElementById("como-funciona")?.scrollIntoView({ behavior: "smooth" })}
                 className="glass-btn px-8 py-4 rounded-full text-base font-semibold inline-flex items-center justify-center gap-2"
               >
                 <Play size={18} /> Ver Como Funciona

@@ -1,43 +1,31 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Início", href: "#inicio" },
-  { label: "Como Funciona", href: "#como-funciona" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Portfólio", href: "#portfolio" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Planos", href: "#planos" },
-  { label: "Contato", href: "#contato" },
+  { label: "Início", href: "/" },
+  { label: "Serviços", href: "/servicos" },
+  { label: "Portfólio", href: "/portfolio" },
+  { label: "Sobre", href: "/sobre" },
+  { label: "Planos", href: "/planos" },
+  { label: "Contato", href: "/contato" },
 ];
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("#inicio");
+  const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 50);
-      
-      const sections = navLinks.map(l => l.href.slice(1));
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i]);
-        if (el && el.getBoundingClientRect().top <= 150) {
-          setActiveSection(`#${sections[i]}`);
-          break;
-        }
-      }
-    };
+    const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleClick = useCallback((href: string) => {
+  useEffect(() => {
     setMobileOpen(false);
-    const el = document.getElementById(href.slice(1));
-    el?.scrollIntoView({ behavior: "smooth" });
-  }, []);
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <nav
@@ -50,40 +38,36 @@ export const Navbar = () => {
       aria-label="Menu principal"
     >
       <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between h-16 lg:h-20">
-        {/* Logo */}
-        <a href="#inicio" onClick={() => handleClick("#inicio")} className="text-xl lg:text-2xl font-display font-bold tracking-tight">
+        <Link to="/" className="text-xl lg:text-2xl font-display font-bold tracking-tight">
           Unive<span className="text-primary glow-text">SIA</span>
-        </a>
+        </Link>
 
-        {/* Desktop links */}
         <div className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
-            <button
+            <Link
               key={link.href}
-              onClick={() => handleClick(link.href)}
+              to={link.href}
               className={`px-3 py-2 text-sm font-medium rounded-md transition-colors relative ${
-                activeSection === link.href
+                location.pathname === link.href
                   ? "text-primary"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {link.label}
-              {activeSection === link.href && (
+              {location.pathname === link.href && (
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4/5 h-0.5 bg-primary rounded-full" />
               )}
-            </button>
+            </Link>
           ))}
         </div>
 
-        {/* CTA desktop */}
-        <button
-          onClick={() => handleClick("#contato")}
+        <Link
+          to="/contato"
           className="hidden lg:block gradient-btn px-5 py-2.5 rounded-full text-sm font-semibold"
         >
           Fale Conosco
-        </button>
+        </Link>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="lg:hidden p-2 text-foreground"
@@ -93,29 +77,28 @@ export const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden glass-card border-t border-primary/10 animate-fade-in">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.href}
-                onClick={() => handleClick(link.href)}
+                to={link.href}
                 className={`px-4 py-3 text-left rounded-md transition-colors ${
-                  activeSection === link.href
+                  location.pathname === link.href
                     ? "text-primary bg-primary/5"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
-            <button
-              onClick={() => handleClick("#contato")}
-              className="gradient-btn px-5 py-3 rounded-full text-sm font-semibold mt-2"
+            <Link
+              to="/contato"
+              className="gradient-btn px-5 py-3 rounded-full text-sm font-semibold mt-2 text-center"
             >
               Fale Conosco
-            </button>
+            </Link>
           </div>
         </div>
       )}

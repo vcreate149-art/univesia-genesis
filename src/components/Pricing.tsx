@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TiltCard } from "@/components/TiltCard";
 import { Check, Sparkles } from "lucide-react";
@@ -82,14 +83,14 @@ export const Pricing = () => {
                     </li>
                   ))}
                 </ul>
-                <button
-                  onClick={() => document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" })}
-                  className={`w-full py-3 rounded-full text-sm font-semibold ${
+                <Link
+                  to="/contato"
+                  className={`w-full py-3 rounded-full text-sm font-semibold text-center block ${
                     plan.highlighted ? "gradient-btn" : "glass-btn"
                   }`}
                 >
                   Solicitar Proposta
-                </button>
+                </Link>
               </TiltCard>
             </ScrollReveal>
           ))}

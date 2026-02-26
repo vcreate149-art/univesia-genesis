@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { X, ExternalLink } from "lucide-react";
 
@@ -144,15 +145,12 @@ export const Portfolio = () => {
                 <span key={t} className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary/80">{t}</span>
               ))}
             </div>
-            <button
-              onClick={() => {
-                setOpenProject(null);
-                document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
-              }}
+            <Link
+              to="/contato"
               className="gradient-btn w-full py-3 rounded-full text-sm font-semibold inline-flex items-center justify-center gap-2"
             >
               Projeto Similar <ExternalLink size={14} />
-            </button>
+            </Link>
           </div>
         </div>
       )}
