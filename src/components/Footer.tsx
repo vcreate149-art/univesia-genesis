@@ -30,9 +30,9 @@ const socials = [
 
 export const Footer = () => {
   return (
-    <footer className="border-t border-primary/10 pt-16 pb-8">
+    <footer className="border-t border-primary/10 pt-10 sm:pt-16 pb-6 sm:pb-8">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="text-xl font-display font-bold">
               Unive<span className="text-primary glow-text">SIA</span>

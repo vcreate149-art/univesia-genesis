@@ -37,7 +37,7 @@ export const Navbar = () => {
       role="navigation"
       aria-label="Menu principal"
     >
-      <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between h-16 lg:h-20">
+      <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between h-14 sm:h-16 lg:h-20">
         <Link to="/" className="text-xl lg:text-2xl font-display font-bold tracking-tight">
           Unive<span className="text-primary glow-text">SIA</span>
         </Link>
@@ -78,13 +78,13 @@ export const Navbar = () => {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden glass-card border-t border-primary/10 animate-fade-in">
-          <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
+        <div className="lg:hidden glass-card border-t border-primary/10 animate-fade-in max-h-[calc(100dvh-3.5rem)] overflow-y-auto">
+          <div className="container mx-auto px-4 py-4 flex flex-col gap-1 pb-[calc(1rem+env(safe-area-inset-bottom))]">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`px-4 py-3 text-left rounded-md transition-colors ${
+                className={`px-4 py-3 text-left rounded-md transition-colors text-base ${
                   location.pathname === link.href
                     ? "text-primary bg-primary/5"
                     : "text-muted-foreground hover:text-foreground"

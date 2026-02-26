@@ -32,20 +32,20 @@ const SkillBar = ({ name, pct }: { name: string; pct: number }) => (
 
 export const About = () => {
   return (
-    <section id="sobre" className="py-24 relative">
-      <div className="section-divider mb-24" />
+    <section id="sobre" className="py-12 sm:py-16 md:py-24 relative">
+      <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
       <div className="container mx-auto px-4 sm:px-6">
-        <ScrollReveal className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+        <ScrollReveal className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-3 sm:mb-4">
             Sobre a <span className="text-gradient">UniveSIA</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-2">
             Somos uma agência de tecnologia apaixonada por transformar negócios através de soluções digitais inteligentes. 
             Combinamos criatividade, expertise técnica e metodologias ágeis para entregar resultados excepcionais.
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10 sm:mb-16">
           {values.map((v, i) => (
             <ScrollReveal key={i} delay={i * 100} direction="scale">
               <div className="glass-card p-6 text-center group hover:border-primary/30 transition-all duration-300">
