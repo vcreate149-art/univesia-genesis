@@ -38,7 +38,7 @@ export const Navbar = () => {
       aria-label="Menu principal"
     >
       <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between h-14 sm:h-16 lg:h-20">
-        <Link to="/" className="text-xl lg:text-2xl font-display font-bold tracking-tight text-foreground">
+        <Link to="/" className="text-xl lg:text-2xl font-display font-bold tracking-tight text-foreground leading-none flex items-center">
           Unive<span className="text-primary">SIA</span>
         </Link>
 
