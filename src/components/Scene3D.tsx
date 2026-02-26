@@ -1,71 +1,45 @@
-import { useRef, useMemo } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import * as THREE from "three";
+import { useMemo, lazy, Suspense } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
-const IcosahedronWireframe = () => {
-  const meshRef = useRef<THREE.Mesh>(null);
-  const mouseRef = useRef({ x: 0, y: 0 });
+// Stable positions to avoid CLS from random values
+const particlePositions = Array.from({ length: 20 }, (_, i) => ({
+  left: `${(i * 37 + 13) % 100}%`,
+  top: `${(i * 53 + 7) % 100}%`,
+  delay: `${(i * 0.7) % 3}s`,
+  duration: `${2 + (i * 1.3) % 4}s`,
+}));
 
-  useFrame((_, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += delta * 0.15;
-      meshRef.current.rotation.y += delta * 0.2;
-      meshRef.current.rotation.z += delta * 0.05;
-    }
-  });
+// CSS-only particle fallback for mobile (no WebGL)
+const CSSParticles = () => (
+  <div className="w-full h-full absolute inset-0 pointer-events-none overflow-hidden">
+    {particlePositions.map((p, i) => (
+      <div
+        key={i}
+        className="absolute w-1 h-1 bg-primary/30 rounded-full animate-pulse"
+        style={{
+          left: p.left,
+          top: p.top,
+          animationDelay: p.delay,
+          animationDuration: p.duration,
+        }}
+      />
+    ))}
+  </div>
+);
 
-  return (
-    <mesh ref={meshRef}>
-      <icosahedronGeometry args={[2, 1]} />
-      <meshBasicMaterial color="#00FFFF" wireframe transparent opacity={0.6} />
-    </mesh>
-  );
-};
-
-const FloatingParticles = () => {
-  const pointsRef = useRef<THREE.Points>(null);
-  
-  const particles = useMemo(() => {
-    const positions = new Float32Array(200 * 3);
-    for (let i = 0; i < 200; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 10;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
-    }
-    return positions;
-  }, []);
-
-  useFrame((_, delta) => {
-    if (pointsRef.current) {
-      pointsRef.current.rotation.y += delta * 0.03;
-    }
-  });
-
-  return (
-    <points ref={pointsRef}>
-      <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          count={200}
-          array={particles}
-          itemSize={3}
-        />
-      </bufferGeometry>
-      <pointsMaterial color="#00FFFF" size={0.03} transparent opacity={0.5} sizeAttenuation />
-    </points>
-  );
-};
+// Lazy-loaded 3D scene (only imported on desktop)
+const LazyScene = lazy(() => import("@/components/Scene3DCanvas"));
 
 export const Scene3D = () => {
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return <CSSParticles />;
+  }
+
   return (
-    <div className="w-full h-full absolute inset-0 pointer-events-none">
-      <Canvas
-        camera={{ position: [0, 0, 6], fov: 50 }}
-        style={{ background: "transparent" }}
-        gl={{ alpha: true, antialias: true }}
-      >
-        <FloatingParticles />
-      </Canvas>
-    </div>
+    <Suspense fallback={<CSSParticles />}>
+      <LazyScene />
+    </Suspense>
   );
 };

@@ -92,10 +92,13 @@ export const Hero = () => {
             <span className="text-muted-foreground">Inovação Digital</span>
           </div>
 
-          {/* Title — fluid clamp */}
+          {/* Title — fluid clamp with accessible fallback */}
           <h1 className="text-[clamp(2.5rem,8vw,6rem)] font-display font-black mb-3 sm:mb-4 leading-[1.1] min-h-[1.2em]">
-            {displayed}
-            <span className={`inline-block w-[3px] h-[0.8em] bg-primary ml-1 ${done ? "animate-pulse" : ""}`} />
+            <span className="sr-only">UniveSIA</span>
+            <span aria-hidden="true">
+              {displayed}
+              <span className={`inline-block w-[3px] h-[0.8em] bg-primary ml-1 ${done ? "animate-pulse" : ""}`} />
+            </span>
           </h1>
 
           {/* Subtitle */}
