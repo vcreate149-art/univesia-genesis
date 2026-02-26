@@ -5,7 +5,7 @@ import i18n from "@/i18n";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { CONFIG } from "@/config";
 import { supabase } from "@/integrations/supabase/client";
-import { Send, MessageCircle, Mail, Linkedin, Calendar, Loader2, CheckCircle, Sparkles } from "lucide-react";
+import { Send, MessageCircle, Mail, Linkedin, Calendar, Loader2, CheckCircle, Wand2 } from "lucide-react";
 import { toast } from "sonner";
 
 const ddiOptions = [
@@ -206,7 +206,7 @@ export const Contact = () => {
                     }}
                     className="text-xs text-primary hover:text-primary/80 font-medium inline-flex items-center gap-1 disabled:opacity-40 transition-colors"
                   >
-                    {enhancing ? <Loader2 size={12} className="animate-spin" /> : <Sparkles size={12} />}
+                    {enhancing ? <Loader2 size={12} className="animate-spin" /> : <Wand2 size={12} />}
                     {enhancing ? t("contact.enhancing") : t("contact.enhanceWithAI")}
                   </button>
                 </div>
