@@ -64,8 +64,6 @@ export const Scene3D = () => {
         style={{ background: "transparent" }}
         gl={{ alpha: true, antialias: true }}
       >
-        <ambientLight intensity={0.5} />
-        <IcosahedronWireframe />
         <FloatingParticles />
       </Canvas>
     </div>
