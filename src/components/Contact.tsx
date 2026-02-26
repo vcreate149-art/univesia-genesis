@@ -1,4 +1,5 @@
 import { useState, useEffect, FormEvent } from "react";
+import { useSearchParams } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { CONFIG } from "@/config";
 import { supabase } from "@/integrations/supabase/client";
@@ -79,13 +80,15 @@ const budgets = [
 const timelines = ["1 mês", "2-3 meses", "3-6 meses", "Sem prazo definido"];
 
 export const Contact = () => {
+  const [searchParams] = useSearchParams();
   const [ddi, setDdi] = useState("+55");
   const [phone, setPhone] = useState("");
+  const preselectedService = searchParams.get("servico") || "";
   const [form, setForm] = useState({
     name: "",
     email: "",
     company: "",
-    projectType: "",
+    projectType: preselectedService,
     budget: "",
     timeline: "",
     message: "",
