@@ -40,8 +40,8 @@ export const About = () => {
             Sobre a <span className="text-gradient">UniveSIA</span>
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-2">
-            Somos uma agência de tecnologia apaixonada por transformar negócios através de soluções digitais inteligentes. 
-            Combinamos criatividade, expertise técnica e metodologias ágeis para entregar resultados excepcionais.
+            Somos uma agência de tecnologia que atende clientes de todo o mundo, transformando negócios através de soluções digitais inteligentes. 
+            Combinamos criatividade, expertise técnica e metodologias ágeis para entregar resultados excepcionais a empresas de qualquer porte e região.
           </p>
         </ScrollReveal>
 

@@ -41,6 +41,14 @@ const faqs = [
     q: "Posso acompanhar o progresso do projeto?",
     a: "Sim! Disponibilizamos acesso a um painel de acompanhamento e realizamos reuniões semanais de alinhamento para garantir que tudo esteja no caminho certo.",
   },
+  {
+    q: "Vocês atendem clientes internacionais?",
+    a: "Sim! Atendemos clientes de todo o mundo. Nossa equipe trabalha em múltiplos fusos horários e nos comunicamos em Português, Inglês e Espanhol. Utilizamos ferramentas de colaboração remota para garantir alinhamento independente da localização.",
+  },
+  {
+    q: "Como funcionam os pagamentos internacionais?",
+    a: "Aceitamos pagamentos internacionais via transferência bancária (SWIFT), PayPal e cartão de crédito em USD, EUR e BRL. Os orçamentos podem ser apresentados na moeda de sua preferência.",
+  },
 ];
 
 const FAQPage = () => (

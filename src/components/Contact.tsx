@@ -16,10 +16,11 @@ const projectTypes = [
 ];
 
 const budgets = [
-  "Até R$ 5.000",
-  "R$ 5.000 – R$ 15.000",
-  "R$ 15.000 – R$ 30.000",
-  "Acima de R$ 30.000",
+  "Up to $1,000",
+  "$1,000 – $5,000",
+  "$5,000 – $15,000",
+  "$15,000 – $30,000",
+  "Above $30,000",
 ];
 
 const timelines = ["1 mês", "2-3 meses", "3-6 meses", "Sem prazo definido"];
@@ -104,7 +105,7 @@ export const Contact = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   name="whatsapp"
-                  placeholder="WhatsApp *"
+                  placeholder="WhatsApp (com DDI) *"
                   required
                   value={form.whatsapp}
                   onChange={handleChange}

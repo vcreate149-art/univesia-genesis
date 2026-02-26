@@ -113,7 +113,7 @@ export const Hero = () => {
               Universal Intelligent System Architected
             </p>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 px-2">
-              Transformamos complexidade em soluções digitais inteligentes. Sites, sistemas, automações e IA para empresas que querem crescer.
+              Transformamos complexidade em soluções digitais inteligentes para empresas de todo o mundo. Sites, sistemas, automações e IA para quem quer crescer.
             </p>
 
             {/* CTAs */}
