@@ -1,4 +1,5 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { TiltCard } from "@/components/TiltCard";
 import { Check, Sparkles } from "lucide-react";
 
 const plans = [
@@ -59,7 +60,7 @@ export const Pricing = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {plans.map((plan, i) => (
             <ScrollReveal key={i} delay={i * 100} direction="scale">
-              <div
+              <TiltCard
                 className={`glass-card p-6 flex flex-col relative ${
                   plan.highlighted
                     ? "border-primary/40 glow-border"
@@ -89,7 +90,7 @@ export const Pricing = () => {
                 >
                   Solicitar Proposta
                 </button>
-              </div>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>

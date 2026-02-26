@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { TiltCard } from "@/components/TiltCard";
 import { Globe, Server, Smartphone, Zap, Users, Brain, X } from "lucide-react";
 
 const services = [
@@ -79,9 +80,8 @@ export const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => (
             <ScrollReveal key={i} delay={i * 80} direction="scale">
-              <div
+              <TiltCard
                 className="glass-card p-6 h-full flex flex-col group hover:border-primary/30 transition-all duration-300 cursor-pointer"
-                style={{ perspective: "1000px" }}
                 onClick={() => setOpenModal(i)}
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
@@ -99,7 +99,7 @@ export const Services = () => {
                 <button className="mt-4 text-sm text-primary hover:underline self-start">
                   Saiba Mais →
                 </button>
-              </div>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>
