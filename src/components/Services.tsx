@@ -62,9 +62,10 @@ const services = [
   },
 ];
 
-export const Services = () => {
+export const Services = ({ limit }: { limit?: number }) => {
   const [openModal, setOpenModal] = useState<number | null>(null);
   const selected = openModal !== null ? services[openModal] : null;
+  const visibleServices = limit ? services.slice(0, limit) : services;
 
   return (
     <section id="servicos" className="py-12 sm:py-16 md:py-24 relative">
@@ -80,7 +81,7 @@ export const Services = () => {
         </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {services.map((s, i) => (
+          {visibleServices.map((s, i) => (
             <ScrollReveal key={i} delay={i * 80} direction="scale">
               <TiltCard
                 className="glass-card p-6 h-full flex flex-col group hover:border-primary/30 transition-all duration-300 cursor-pointer"
@@ -106,6 +107,17 @@ export const Services = () => {
             </ScrollReveal>
           ))}
         </div>
+
+        {limit && limit < services.length && (
+          <ScrollReveal className="text-center mt-8">
+            <Link
+              to="/servicos"
+              className="gradient-btn px-8 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2"
+            >
+              Ver Todos os Serviços →
+            </Link>
+          </ScrollReveal>
+        )}
       </div>
 
       {/* Modal */}
