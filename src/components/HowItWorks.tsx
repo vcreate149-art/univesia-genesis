@@ -1,4 +1,5 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { TiltCard } from "@/components/TiltCard";
 import { Search, PenTool, Code, TestTube, Rocket, Headphones } from "lucide-react";
 
 const steps = [
@@ -27,7 +28,7 @@ export const HowItWorks = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {steps.map((step, i) => (
             <ScrollReveal key={i} delay={i * 100} direction="scale">
-              <div className="glass-card p-6 group hover:border-primary/30 transition-all duration-300 relative overflow-hidden">
+              <TiltCard className="glass-card p-6 group hover:border-primary/30 transition-all duration-300 relative overflow-hidden">
                 {/* Step number */}
                 <span className="absolute top-4 right-4 text-5xl font-display font-black text-primary/10 group-hover:text-primary/20 transition-colors">
                   {String(i + 1).padStart(2, "0")}
@@ -38,7 +39,7 @@ export const HowItWorks = () => {
                 </div>
                 <h3 className="text-lg font-display font-semibold mb-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground">{step.desc}</p>
-              </div>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>
