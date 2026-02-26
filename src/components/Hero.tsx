@@ -137,7 +137,7 @@ export const Hero = () => {
           <ScrollReveal className="mt-14 sm:mt-20 grid grid-cols-3 gap-4 sm:gap-8 max-w-lg mx-auto" delay={200}>
             <Counter target={CONFIG.counters.projects} label="Projetos Entregues" suffix="+" />
             <Counter target={CONFIG.counters.clients} label="Clientes Satisfeitos" suffix="+" />
-            <Counter target={CONFIG.counters.years} label="Anos de Experiência" />
+            <Counter target={CONFIG.counters.technologies} label="Tecnologias Dominadas" suffix="+" />
           </ScrollReveal>
         </div>
       </div>

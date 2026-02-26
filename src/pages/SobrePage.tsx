@@ -1,5 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { About } from "@/components/About";
+import { Team } from "@/components/Team";
+import { Certifications } from "@/components/Certifications";
 import { Footer } from "@/components/Footer";
 
 const SobrePage = () => (
@@ -7,6 +9,8 @@ const SobrePage = () => (
     <Navbar />
     <main className="pt-20">
       <About />
+      <Team />
+      <Certifications />
     </main>
     <Footer />
   </div>

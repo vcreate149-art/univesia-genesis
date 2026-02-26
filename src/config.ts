@@ -26,6 +26,11 @@ export const CONFIG = {
   counters: {
     projects: 47,
     clients: 32,
-    years: 3,
+    technologies: 15,
+  },
+  company: {
+    cnpj: "00.000.000/0001-00",
+    address: "São Paulo, SP - Brasil",
+    name: "UniveSIA Tecnologia LTDA",
   },
 };
