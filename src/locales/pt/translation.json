@@ -1,0 +1,246 @@
+{
+  "nav": {
+    "home": "Início",
+    "services": "Serviços",
+    "portfolio": "Portfólio",
+    "about": "Sobre",
+    "blog": "Blog",
+    "plans": "Planos",
+    "contact": "Contato",
+    "contactUs": "Fale Conosco",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu"
+  },
+  "hero": {
+    "badge": "Inovação Digital",
+    "subtitle": "Universal Intelligent System Architected",
+    "description": "Transformamos complexidade em soluções digitais inteligentes para empresas de todo o mundo. Sites, sistemas, automações e IA para quem quer crescer.",
+    "cta": "Começar Projeto",
+    "viewPlans": "Ver Planos",
+    "projectsDelivered": "Projetos Entregues",
+    "happyClients": "Clientes Satisfeitos",
+    "technologies": "Tecnologias Dominadas",
+    "scrollDown": "Rolar para baixo"
+  },
+  "howItWorks": {
+    "title": "Como",
+    "titleHighlight": "Funciona",
+    "subtitle": "Nosso processo de trabalho garante resultados excepcionais em cada etapa",
+    "steps": [
+      { "title": "Discovery e Briefing", "desc": "Entendemos seu negócio e objetivos" },
+      { "title": "Planejamento e Arquitetura", "desc": "Definimos a solução ideal" },
+      { "title": "Design e Prototipagem", "desc": "Criamos a experiência visual" },
+      { "title": "Desenvolvimento", "desc": "Construímos com tecnologia de ponta" },
+      { "title": "Testes e QA", "desc": "Garantimos qualidade e performance" },
+      { "title": "Deploy e Suporte", "desc": "Entregamos e acompanhamos" }
+    ]
+  },
+  "services": {
+    "title": "Nossos",
+    "titleHighlight": "Serviços",
+    "subtitle": "Soluções completas para transformar e escalar seu negócio",
+    "learnMore": "Saiba Mais →",
+    "viewAll": "Ver Todos os Serviços →",
+    "requestProposal": "Solicitar Proposta",
+    "useCases": "Casos de Uso",
+    "avgTimeline": "Prazo médio",
+    "close": "Fechar",
+    "items": [
+      {
+        "title": "Websites e Landing Pages",
+        "desc": "Sites modernos, rápidos e otimizados para conversão.",
+        "detail": "Criamos websites e landing pages de alta performance com foco em conversão, SEO e experiência do usuário. Design responsivo e carregamento ultrarrápido.",
+        "useCases": ["Landing pages de campanhas", "Sites institucionais", "Portais corporativos"],
+        "timeline": "2 a 4 semanas"
+      },
+      {
+        "title": "Sistemas Web Personalizados",
+        "desc": "Aplicações sob medida para automatizar processos.",
+        "detail": "Desenvolvemos sistemas web completos para gestão, CRM, ERP e processos internos. Arquitetura escalável e integrações robustas.",
+        "useCases": ["Sistemas de gestão interna", "Dashboards analíticos", "Portais de clientes"],
+        "timeline": "4 a 12 semanas"
+      },
+      {
+        "title": "Aplicativos Mobile",
+        "desc": "Apps nativos e cross-platform para iOS e Android.",
+        "detail": "Aplicativos mobile com experiência nativa, performance otimizada e design intuitivo para engajar seus usuários.",
+        "useCases": ["Apps de delivery", "Apps corporativos", "MVPs para startups"],
+        "timeline": "6 a 16 semanas"
+      },
+      {
+        "title": "Automações e Integrações",
+        "desc": "Conecte ferramentas e automatize tarefas repetitivas.",
+        "detail": "Automatizamos fluxos de trabalho, integramos sistemas e eliminamos tarefas manuais para aumentar a produtividade da sua equipe.",
+        "useCases": ["Automação de vendas", "Integração de ERPs", "Fluxos de atendimento"],
+        "timeline": "1 a 3 semanas"
+      },
+      {
+        "title": "Consultoria Técnica",
+        "desc": "Orientação especializada para decisões tecnológicas.",
+        "detail": "Oferecemos consultoria em arquitetura de software, code review, migração de sistemas e otimização de performance.",
+        "useCases": ["Auditoria de código", "Planejamento de migração", "Mentoria técnica"],
+        "timeline": "Sob demanda"
+      },
+      {
+        "title": "Inteligência Artificial",
+        "desc": "Chatbots, LLMs e automação inteligente com IA.",
+        "detail": "Implementamos soluções de IA para atendimento, análise de dados e automação de processos com modelos de linguagem e visão computacional.",
+        "useCases": ["Chatbots de atendimento", "Análise preditiva", "Processamento de documentos"],
+        "timeline": "3 a 8 semanas"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "O que dizem nossos",
+    "titleHighlight": "clientes",
+    "prev": "Anterior",
+    "next": "Próximo",
+    "testimonial": "Depoimento"
+  },
+  "partners": {
+    "subtitle": "Construímos com as melhores tecnologias do mercado",
+    "ctaTitle": "Pronto para",
+    "ctaHighlight": "transformar",
+    "ctaSuffix": "seu negócio?",
+    "ctaButton": "Começar Agora"
+  },
+  "about": {
+    "title": "Sobre a",
+    "titleHighlight": "UniveSIA",
+    "description": "Somos uma agência de tecnologia que atende clientes de todo o mundo, transformando negócios através de soluções digitais inteligentes. Combinamos criatividade, expertise técnica e metodologias ágeis para entregar resultados excepcionais a empresas de qualquer porte e região.",
+    "specialties": "Nossas Especialidades",
+    "values": [
+      { "title": "Inovação", "desc": "Buscamos sempre as melhores tecnologias e práticas do mercado" },
+      { "title": "Transparência", "desc": "Comunicação clara e honesta em todas as etapas do projeto" },
+      { "title": "Qualidade", "desc": "Código limpo, testes rigorosos e padrões de excelência" },
+      { "title": "Comprometimento", "desc": "Seu sucesso é o nosso sucesso, nos dedicamos ao máximo" }
+    ]
+  },
+  "pricing": {
+    "title": "Planos e",
+    "titleHighlight": "Propostas",
+    "subtitle": "Escolha o plano ideal para o momento do seu negócio",
+    "mostPopular": "Mais Popular",
+    "requestProposal": "Solicitar Proposta",
+    "plans": [
+      {
+        "name": "Starter",
+        "desc": "Ideal para presença digital inicial",
+        "features": ["Landing Page profissional", "Design responsivo", "Domínio + Hospedagem", "SEO básico", "Suporte 30 dias"]
+      },
+      {
+        "name": "Pro",
+        "desc": "Para empresas que precisam escalar",
+        "features": ["Sistema Web completo", "Dashboard personalizado", "Integrações com APIs", "Design sob medida", "Suporte 90 dias", "Treinamento da equipe"]
+      },
+      {
+        "name": "Enterprise",
+        "desc": "Solução completa e personalizada",
+        "features": ["Solução 100% sob medida", "IA e Automações", "Arquitetura escalável", "Consultoria estratégica", "Suporte contínuo", "SLA dedicado"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Fale",
+    "titleHighlight": "Conosco",
+    "subtitle": "Conte-nos sobre seu projeto e receba uma proposta personalizada",
+    "name": "Nome completo *",
+    "email": "E-mail *",
+    "phone": "Número WhatsApp *",
+    "company": "Empresa (opcional)",
+    "projectType": "Tipo de Projeto *",
+    "budget": "Faixa de Orçamento",
+    "timeline": "Prazo Desejado",
+    "message": "Descreva seu projeto...",
+    "send": "Enviar Mensagem",
+    "sending": "Enviando...",
+    "sent": "Enviado com Sucesso!",
+    "retry": "Tentar Novamente",
+    "errorMsg": "Erro ao enviar mensagem. Tente novamente.",
+    "successMsg": "Mensagem enviada com sucesso!",
+    "directContact": "Contato Direto",
+    "scheduleMeeting": "Agendar Reunião Gratuita",
+    "meetingDesc": "30 minutos para conversar sobre seu projeto sem compromisso",
+    "scheduleTime": "Agendar Horário",
+    "budgets": ["Up to $1,000", "$1,000 – $5,000", "$5,000 – $15,000", "$15,000 – $30,000", "Above $30,000"],
+    "timelines": ["1 mês", "2-3 meses", "3-6 meses", "Sem prazo definido"]
+  },
+  "portfolio": {
+    "title": "Nosso",
+    "titleHighlight": "Portfólio",
+    "subtitle": "Projetos que geraram resultados reais",
+    "viewCase": "Ver Estudo de Caso →",
+    "challenge": "Desafio",
+    "solution": "Solução",
+    "results": "Resultados",
+    "similarProject": "Projeto Similar",
+    "close": "Fechar",
+    "categories": ["Todos", "Websites", "Sistemas", "Mobile", "Automações", "IA"]
+  },
+  "footer": {
+    "tagline": "Transformando negócios através de tecnologia inteligente",
+    "navigation": "Navegação",
+    "services": "Serviços",
+    "contact": "Contato",
+    "allRights": "Todos os direitos reservados.",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso"
+  },
+  "cookie": {
+    "message": "Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa",
+    "privacyLink": "Política de Privacidade",
+    "accept": "Aceitar",
+    "decline": "Recusar"
+  },
+  "whatsapp": {
+    "tooltip": "Fale conosco agora!",
+    "aria": "Fale conosco pelo WhatsApp"
+  },
+  "faq": {
+    "title": "Perguntas",
+    "titleHighlight": "Frequentes",
+    "subtitle": "Respostas para as dúvidas mais comuns sobre nossos serviços, processos e formas de trabalho.",
+    "items": [
+      {
+        "q": "Como funciona o processo de desenvolvimento?",
+        "a": "Nosso processo segue 4 etapas: 1) Briefing e análise de requisitos, 2) Prototipação e design, 3) Desenvolvimento com sprints semanais, 4) Testes, ajustes e entrega. Você acompanha tudo em tempo real."
+      },
+      {
+        "q": "Quanto tempo leva para desenvolver um projeto?",
+        "a": "Depende da complexidade. Uma landing page leva de 5 a 10 dias. Um sistema web completo pode levar de 4 a 12 semanas. Após o briefing, fornecemos um cronograma detalhado."
+      },
+      {
+        "q": "Quais são as formas de pagamento?",
+        "a": "Aceitamos PIX, boleto e cartão de crédito (em até 12x). Para projetos maiores, dividimos em parcelas atreladas às entregas de cada etapa."
+      },
+      {
+        "q": "Vocês oferecem suporte após a entrega?",
+        "a": "Sim! Todos os projetos incluem 30 dias de suporte gratuito após a entrega. Também oferecemos planos de manutenção mensal para atualizações contínuas."
+      },
+      {
+        "q": "É possível alterar o escopo durante o projeto?",
+        "a": "Sim, trabalhamos com metodologia ágil. Mudanças de escopo são avaliadas e, se necessário, ajustamos o cronograma e orçamento em conjunto com o cliente."
+      },
+      {
+        "q": "Vocês desenvolvem apps mobile?",
+        "a": "Sim! Desenvolvemos aplicativos mobile usando React Native, o que permite criar apps para iOS e Android com uma única base de código, reduzindo custos e tempo."
+      },
+      {
+        "q": "Como funciona o modelo de contrato?",
+        "a": "Trabalhamos com contrato de prestação de serviços que detalha escopo, cronograma, valores e condições. Tudo transparente e alinhado antes do início."
+      },
+      {
+        "q": "Posso acompanhar o progresso do projeto?",
+        "a": "Sim! Disponibilizamos acesso a um painel de acompanhamento e realizamos reuniões semanais de alinhamento para garantir que tudo esteja no caminho certo."
+      },
+      {
+        "q": "Vocês atendem clientes internacionais?",
+        "a": "Sim! Atendemos clientes de todo o mundo. Nossa equipe trabalha em múltiplos fusos horários e nos comunicamos em Português, Inglês e Espanhol. Utilizamos ferramentas de colaboração remota para garantir alinhamento independente da localização."
+      },
+      {
+        "q": "Como funcionam os pagamentos internacionais?",
+        "a": "Aceitamos pagamentos internacionais via transferência bancária (SWIFT), PayPal e cartão de crédito em USD, EUR e BRL. Os orçamentos podem ser apresentados na moeda de sua preferência."
+      }
+    ]
+  }
+}
