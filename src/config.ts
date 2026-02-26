@@ -29,8 +29,6 @@ export const CONFIG = {
     technologies: 15,
   },
   company: {
-    cnpj: "00.000.000/0001-00",
-    address: "São Paulo, SP - Brasil",
     name: "UniveSIA Tecnologia LTDA",
   },
 };
