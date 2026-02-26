@@ -96,14 +96,17 @@
   }
 
   /* Minimum touch target size (WCAG 2.5.5) */
-  button, a, [role="button"] {
+  button:not(.dot-indicator), 
+  a:not(.inline-link), 
+  [role="button"]:not(.dot-indicator) {
     min-height: 44px;
     min-width: 44px;
   }
 
-  /* Exception for inline links and small UI elements */
+  /* Exception for inline links, small UI dots, and compact elements */
   p a, li a, span a,
-  .inline-link {
+  .inline-link,
+  .dot-indicator {
     min-height: unset;
     min-width: unset;
   }
