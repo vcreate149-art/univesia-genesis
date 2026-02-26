@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { ArrowRight, Play, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { CONFIG } from "@/config";
-import { Scene3D } from "@/components/Scene3D";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const useTypewriter = (text: string, speed = 100, startDelay = 500) => {
@@ -61,7 +60,7 @@ const Counter = ({ target, label, suffix = "" }: { target: number; label: string
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-primary glow-text">
+      <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-primary">
         {count}{suffix}
       </div>
       <div className="text-[11px] sm:text-sm text-muted-foreground mt-1 leading-tight">{label}</div>
@@ -72,28 +71,22 @@ const Counter = ({ target, label, suffix = "" }: { target: number; label: string
 export const Hero = () => {
   const { displayed, done } = useTypewriter("UniveSIA", 120, 300);
 
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <section id="inicio" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-16 sm:pt-20 pb-16">
-      {/* 3D Background */}
-      <Scene3D />
-
-      {/* Radial gradient overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(180_100%_50%_/_0.05)_0%,_transparent_70%)]" />
+    <section id="inicio" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-16 sm:pt-20 pb-16 bg-gradient-to-br from-[hsl(213_100%_97%)] via-background to-[hsl(260_80%_97%)]">
+      {/* Decorative shapes like Calendly */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[hsl(213_100%_50%_/_0.08)] to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[hsl(260_80%_60%_/_0.06)] to-transparent rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 glass-card px-3 py-1.5 sm:px-4 sm:py-2 mb-6 sm:mb-8 text-xs sm:text-sm">
+          <div className="inline-flex items-center gap-2 bg-primary/5 border border-primary/10 px-3 py-1.5 sm:px-4 sm:py-2 mb-6 sm:mb-8 text-xs sm:text-sm rounded-full">
             <span className="w-2 h-2 bg-primary rounded-full pulse-glow" />
             <span className="text-muted-foreground">Inovação Digital</span>
           </div>
 
-          {/* Title — fluid clamp with accessible fallback */}
-          <h1 className="text-[clamp(2.5rem,8vw,6rem)] font-display font-black mb-3 sm:mb-4 leading-[1.1] min-h-[1.2em] flex items-center justify-center">
+          {/* Title */}
+          <h1 className="text-[clamp(2.5rem,8vw,6rem)] font-display font-black mb-3 sm:mb-4 leading-[1.1] min-h-[1.2em] flex items-center justify-center text-foreground">
             <span className="sr-only">UniveSIA</span>
             <span aria-hidden="true" className="relative inline-block">
               {displayed}
@@ -105,7 +98,7 @@ export const Hero = () => {
           <div
             className={`transition-all duration-700 ${done ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
-            <p className="text-primary/80 tracking-[0.2em] sm:tracking-[0.3em] text-[10px] sm:text-xs md:text-sm uppercase mb-4 sm:mb-6">
+            <p className="text-primary/70 tracking-[0.2em] sm:tracking-[0.3em] text-[10px] sm:text-xs md:text-sm uppercase mb-4 sm:mb-6">
               Universal Intelligent System Architected
             </p>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 px-2">
@@ -140,8 +133,8 @@ export const Hero = () => {
 
       {/* Scroll indicator */}
       <button
-        onClick={() => scrollTo("como-funciona")}
-        className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 text-primary/60 animate-bounce"
+        onClick={() => document.getElementById("como-funciona")?.scrollIntoView({ behavior: "smooth" })}
+        className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 text-primary/40 animate-bounce"
         aria-label="Rolar para baixo"
       >
         <ChevronDown size={28} />

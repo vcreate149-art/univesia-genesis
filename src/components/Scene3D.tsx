@@ -1,45 +1,27 @@
-import { useMemo, lazy, Suspense } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { useMemo } from "react";
 
-// Stable positions to avoid CLS from random values
+// Lightweight CSS particles for light theme
 const particlePositions = Array.from({ length: 20 }, (_, i) => ({
   left: `${(i * 37 + 13) % 100}%`,
   top: `${(i * 53 + 7) % 100}%`,
-  delay: `${(i * 0.7) % 3}s`,
-  duration: `${2 + (i * 1.3) % 4}s`,
+  delay: `${(i * 0.7) % 4}s`,
+  size: `${2 + (i % 3)}px`,
 }));
 
-// CSS-only particle fallback for mobile (no WebGL)
-const CSSParticles = () => (
-  <div className="w-full h-full absolute inset-0 pointer-events-none overflow-hidden">
+export const Scene3D = () => (
+  <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
     {particlePositions.map((p, i) => (
       <div
         key={i}
-        className="absolute w-1 h-1 bg-primary/30 rounded-full animate-pulse"
+        className="absolute rounded-full bg-primary/10 float-animation"
         style={{
           left: p.left,
           top: p.top,
+          width: p.size,
+          height: p.size,
           animationDelay: p.delay,
-          animationDuration: p.duration,
         }}
       />
     ))}
   </div>
 );
-
-// Lazy-loaded 3D scene (only imported on desktop)
-const LazyScene = lazy(() => import("@/components/Scene3DCanvas"));
-
-export const Scene3D = () => {
-  const isMobile = useIsMobile();
-
-  if (isMobile) {
-    return <CSSParticles />;
-  }
-
-  return (
-    <Suspense fallback={<CSSParticles />}>
-      <LazyScene />
-    </Suspense>
-  );
-};

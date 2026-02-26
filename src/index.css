@@ -4,56 +4,49 @@
 
 @layer base {
   :root {
-    --background: 213 67% 11%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 100%;
+    --foreground: 220 20% 18%;
 
-    --card: 213 60% 14%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 18%;
 
-    --popover: 213 60% 14%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 18%;
 
-    --primary: 180 100% 50%;
-    --primary-foreground: 213 67% 11%;
+    --primary: 213 100% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 174 100% 38%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 213 100% 96%;
+    --secondary-foreground: 213 100% 40%;
 
-    --muted: 213 40% 20%;
-    --muted-foreground: 0 0% 88%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 46%;
 
-    --accent: 174 100% 38%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 213 100% 96%;
+    --accent-foreground: 213 100% 40%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 180 100% 50% / 0.15;
-    --input: 213 40% 20%;
-    --ring: 180 100% 50%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 213 100% 50%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 213 67% 9%;
+    --sidebar-background: 220 20% 18%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 180 100% 50%;
-    --sidebar-primary-foreground: 213 67% 11%;
-    --sidebar-accent: 213 40% 20%;
+    --sidebar-primary: 213 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 25%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 180 100% 50% / 0.1;
-    --sidebar-ring: 180 100% 50%;
+    --sidebar-border: 220 15% 30%;
+    --sidebar-ring: 213 100% 50%;
 
-    --cyan-glow: 0 0 20px hsl(180 100% 50% / 0.4), 0 0 60px hsl(180 100% 50% / 0.1);
-    --cyan-glow-strong: 0 0 20px hsl(180 100% 50% / 0.6), 0 0 80px hsl(180 100% 50% / 0.2);
-    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50%), hsl(174 100% 38%));
-    --gradient-bg: linear-gradient(180deg, hsl(213 67% 11%), hsl(213 67% 8%));
-    --glass-bg: hsl(213 60% 14% / 0.6);
-    --glass-border: hsl(180 100% 50% / 0.1);
-  }
-
-  .dark {
-    --background: 213 67% 11%;
-    --foreground: 0 0% 100%;
+    --gradient-primary: linear-gradient(135deg, hsl(213 100% 50%), hsl(260 80% 60%));
+    --gradient-bg: linear-gradient(180deg, hsl(213 100% 97%), hsl(0 0% 100%));
+    --glass-bg: hsl(0 0% 100%);
+    --glass-border: hsl(220 13% 91%);
   }
 }
 
@@ -96,8 +89,8 @@
   }
 
   /* Minimum touch target size (WCAG 2.5.5) */
-  button:not(.dot-indicator), 
-  a:not(.inline-link), 
+  button:not(.dot-indicator),
+  a:not(.inline-link),
   [role="button"]:not(.dot-indicator) {
     min-height: 44px;
     min-width: 44px;
@@ -112,8 +105,8 @@
   }
 
   ::selection {
-    background: hsl(180 100% 50% / 0.3);
-    color: hsl(0 0% 100%);
+    background: hsl(213 100% 50% / 0.2);
+    color: hsl(220 20% 18%);
   }
 
   /* Hide scrollbar on mobile for cleaner look */
@@ -133,16 +126,16 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: hsl(213 67% 8%);
+      background: hsl(220 14% 96%);
     }
 
     ::-webkit-scrollbar-thumb {
-      background: hsl(180 100% 50% / 0.3);
+      background: hsl(220 13% 80%);
       border-radius: 4px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: hsl(180 100% 50% / 0.5);
+      background: hsl(220 13% 70%);
     }
   }
 }
@@ -150,10 +143,9 @@
 @layer components {
   .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
   }
 
   .text-gradient {
@@ -164,45 +156,45 @@
   }
 
   .glow-text {
-    text-shadow: var(--cyan-glow);
+    color: hsl(213 100% 50%);
   }
 
   .glow-border {
-    box-shadow: var(--cyan-glow);
+    box-shadow: 0 0 0 2px hsl(213 100% 50% / 0.2), 0 4px 16px hsl(213 100% 50% / 0.1);
   }
 
   .glow-border-strong {
-    box-shadow: var(--cyan-glow-strong);
+    box-shadow: 0 0 0 2px hsl(213 100% 50% / 0.3), 0 8px 24px hsl(213 100% 50% / 0.15);
   }
 
   .gradient-btn {
-    background: var(--gradient-primary);
-    color: hsl(213 67% 11%);
+    background: hsl(213 100% 50%);
+    color: hsl(0 0% 100%);
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
   }
 
   .gradient-btn:hover {
-    box-shadow: var(--cyan-glow-strong);
-    transform: scale(1.05);
+    background: hsl(213 100% 42%);
+    box-shadow: 0 4px 12px hsl(213 100% 50% / 0.3);
+    transform: translateY(-1px);
   }
 
   .glass-btn {
     background: transparent;
-    border: 1px solid hsl(180 100% 50% / 0.3);
-    color: hsl(180 100% 50%);
-    transition: all 0.3s ease;
+    border: 1px solid hsl(220 13% 86%);
+    color: hsl(220 20% 18%);
+    transition: all 0.2s ease;
   }
 
   .glass-btn:hover {
-    background: hsl(180 100% 50% / 0.1);
-    border-color: hsl(180 100% 50% / 0.6);
-    box-shadow: var(--cyan-glow);
+    background: hsl(220 14% 96%);
+    border-color: hsl(220 13% 76%);
   }
 
   .section-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(180 100% 50% / 0.3), transparent);
+    background: hsl(220 13% 91%);
   }
 
   .float-animation {
@@ -215,8 +207,8 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 5px hsl(180 100% 50% / 0.4); }
-    50% { box-shadow: 0 0 20px hsl(180 100% 50% / 0.6), 0 0 40px hsl(180 100% 50% / 0.2); }
+    0%, 100% { box-shadow: 0 0 5px hsl(213 100% 50% / 0.2); }
+    50% { box-shadow: 0 0 20px hsl(213 100% 50% / 0.3); }
   }
 
   .pulse-glow {
@@ -230,13 +222,5 @@
 
   .animate-marquee {
     animation: marquee 30s linear infinite;
-  }
-
-  @keyframes border-trace {
-    0% { background-position: 0% 0%; }
-    25% { background-position: 100% 0%; }
-    50% { background-position: 100% 100%; }
-    75% { background-position: 0% 100%; }
-    100% { background-position: 0% 0%; }
   }
 }
