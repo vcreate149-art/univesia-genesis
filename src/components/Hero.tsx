@@ -72,7 +72,7 @@ export const Hero = () => {
   const { displayed, done } = useTypewriter("UniveSIA", 120, 300);
 
   return (
-    <section id="inicio" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-16 sm:pt-20 pb-16 bg-[hsl(145_50%_97%)]">
+    <section id="inicio" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-16 sm:pt-20 pb-16">
       {/* Large gradient orbs */}
       <div className="absolute -top-32 -right-32 w-[700px] h-[700px] bg-gradient-to-bl from-[hsl(145_65%_42%_/_0.12)] via-[hsl(160_70%_50%_/_0.08)] to-transparent rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '8s' }} />
       <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-gradient-to-tr from-[hsl(160_70%_36%_/_0.10)] via-[hsl(140_60%_50%_/_0.06)] to-transparent rounded-full blur-[80px] animate-pulse" style={{ animationDuration: '10s' }} />
