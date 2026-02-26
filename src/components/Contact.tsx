@@ -5,14 +5,56 @@ import { supabase } from "@/integrations/supabase/client";
 import { Send, MessageCircle, Mail, Linkedin, Calendar, Loader2, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 
-const countryDialCodes: Record<string, string> = {
-  BR: "+55", US: "+1", GB: "+44", DE: "+49", FR: "+33", PT: "+351", ES: "+34",
-  IT: "+39", AR: "+54", MX: "+52", CO: "+57", CL: "+56", PE: "+51", UY: "+598",
-  PY: "+595", CA: "+1", AU: "+61", JP: "+81", CN: "+86", IN: "+91", KR: "+82",
-  SG: "+65", AE: "+971", IL: "+972", ZA: "+27", NG: "+234", NL: "+31", BE: "+32",
-  CH: "+41", AT: "+43", SE: "+46", NO: "+47", DK: "+45", FI: "+358", PL: "+48",
-  IE: "+353", NZ: "+64", CZ: "+420", RO: "+40", HU: "+36", GR: "+30", TR: "+90",
-};
+const ddiOptions = [
+  { code: "+1", flag: "🇺🇸", label: "US/CA" },
+  { code: "+44", flag: "🇬🇧", label: "UK" },
+  { code: "+55", flag: "🇧🇷", label: "BR" },
+  { code: "+351", flag: "🇵🇹", label: "PT" },
+  { code: "+34", flag: "🇪🇸", label: "ES" },
+  { code: "+33", flag: "🇫🇷", label: "FR" },
+  { code: "+49", flag: "🇩🇪", label: "DE" },
+  { code: "+39", flag: "🇮🇹", label: "IT" },
+  { code: "+31", flag: "🇳🇱", label: "NL" },
+  { code: "+41", flag: "🇨🇭", label: "CH" },
+  { code: "+46", flag: "🇸🇪", label: "SE" },
+  { code: "+47", flag: "🇳🇴", label: "NO" },
+  { code: "+45", flag: "🇩🇰", label: "DK" },
+  { code: "+358", flag: "🇫🇮", label: "FI" },
+  { code: "+48", flag: "🇵🇱", label: "PL" },
+  { code: "+353", flag: "🇮🇪", label: "IE" },
+  { code: "+43", flag: "🇦🇹", label: "AT" },
+  { code: "+32", flag: "🇧🇪", label: "BE" },
+  { code: "+420", flag: "🇨🇿", label: "CZ" },
+  { code: "+40", flag: "🇷🇴", label: "RO" },
+  { code: "+36", flag: "🇭🇺", label: "HU" },
+  { code: "+30", flag: "🇬🇷", label: "GR" },
+  { code: "+90", flag: "🇹🇷", label: "TR" },
+  { code: "+54", flag: "🇦🇷", label: "AR" },
+  { code: "+52", flag: "🇲🇽", label: "MX" },
+  { code: "+57", flag: "🇨🇴", label: "CO" },
+  { code: "+56", flag: "🇨🇱", label: "CL" },
+  { code: "+51", flag: "🇵🇪", label: "PE" },
+  { code: "+598", flag: "🇺🇾", label: "UY" },
+  { code: "+595", flag: "🇵🇾", label: "PY" },
+  { code: "+61", flag: "🇦🇺", label: "AU" },
+  { code: "+64", flag: "🇳🇿", label: "NZ" },
+  { code: "+81", flag: "🇯🇵", label: "JP" },
+  { code: "+86", flag: "🇨🇳", label: "CN" },
+  { code: "+91", flag: "🇮🇳", label: "IN" },
+  { code: "+82", flag: "🇰🇷", label: "KR" },
+  { code: "+65", flag: "🇸🇬", label: "SG" },
+  { code: "+971", flag: "🇦🇪", label: "AE" },
+  { code: "+972", flag: "🇮🇱", label: "IL" },
+  { code: "+27", flag: "🇿🇦", label: "ZA" },
+  { code: "+234", flag: "🇳🇬", label: "NG" },
+];
+
+const countryCodeToDialCode: Record<string, string> = {};
+ddiOptions.forEach((o) => { countryCodeToDialCode[o.label] = o.code; });
+// Add aliases
+countryCodeToDialCode["US"] = "+1";
+countryCodeToDialCode["CA"] = "+1";
+countryCodeToDialCode["GB"] = "+44";
 
 const projectTypes = [
   "Website / Landing Page",
@@ -35,10 +77,11 @@ const budgets = [
 const timelines = ["1 mês", "2-3 meses", "3-6 meses", "Sem prazo definido"];
 
 export const Contact = () => {
+  const [ddi, setDdi] = useState("+55");
+  const [phone, setPhone] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
-    whatsapp: "",
     company: "",
     projectType: "",
     budget: "",
@@ -52,10 +95,8 @@ export const Contact = () => {
       .then((r) => r.json())
       .then((data) => {
         if (data?.country_code) {
-          const ddi = countryDialCodes[data.country_code] || "";
-          if (ddi && !form.whatsapp) {
-            setForm((f) => ({ ...f, whatsapp: ddi + " " }));
-          }
+          const detected = countryCodeToDialCode[data.country_code];
+          if (detected) setDdi(detected);
         }
       })
       .catch(() => {});
@@ -72,7 +113,7 @@ export const Contact = () => {
     const { error } = await supabase.from("contact_messages").insert({
       name: form.name,
       email: form.email,
-      whatsapp: form.whatsapp,
+      whatsapp: `${ddi} ${phone}`,
       company: form.company || null,
       project_type: form.projectType,
       budget: form.budget || null,
@@ -126,16 +167,28 @@ export const Contact = () => {
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex gap-2">
+                  <select
+                    value={ddi}
+                    onChange={(e) => setDdi(e.target.value)}
+                    className="w-[110px] shrink-0 bg-muted/50 border border-primary/10 rounded-lg px-2 py-3 text-sm text-foreground focus:outline-none focus:border-primary/40 transition-colors"
+                  >
+                    {ddiOptions.map((o) => (
+                      <option key={o.code + o.label} value={o.code}>
+                        {o.flag} {o.code}
+                      </option>
+                    ))}
+                  </select>
+                  <input
+                    name="phone"
+                    placeholder="Número WhatsApp *"
+                    required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40 transition-colors"
+                  />
+                </div>
                 <input
-                  name="whatsapp"
-                  placeholder="WhatsApp (com DDI) *"
-                  required
-                  value={form.whatsapp}
-                  onChange={handleChange}
-                  className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40 transition-colors"
-                />
-                <input
-                  name="company"
                   placeholder="Empresa (opcional)"
                   value={form.company}
                   onChange={handleChange}
