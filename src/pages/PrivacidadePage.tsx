@@ -44,7 +44,7 @@ const PrivacidadePage = () => (
           <section>
             <h2 className="text-lg font-semibold text-foreground">6. Contato</h2>
             <p>Para dúvidas sobre esta política, entre em contato: <a href={`mailto:${CONFIG.social.email}`} className="text-primary hover:underline">{CONFIG.social.email}</a></p>
-            <p>{CONFIG.company.name} — CNPJ: {CONFIG.company.cnpj}</p>
+            <p>{CONFIG.company.name}</p>
           </section>
         </div>
       </div>
