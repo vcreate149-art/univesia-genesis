@@ -13,38 +13,38 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 18%;
 
-    --primary: 213 100% 50%;
+    --primary: 145 65% 42%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 213 100% 96%;
-    --secondary-foreground: 213 100% 40%;
+    --secondary: 145 60% 95%;
+    --secondary-foreground: 145 65% 30%;
 
     --muted: 220 14% 96%;
     --muted-foreground: 220 10% 46%;
 
-    --accent: 213 100% 96%;
-    --accent-foreground: 213 100% 40%;
+    --accent: 145 60% 95%;
+    --accent-foreground: 145 65% 30%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 213 100% 50%;
+    --ring: 145 65% 42%;
 
     --radius: 0.75rem;
 
     --sidebar-background: 220 20% 18%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 213 100% 50%;
+    --sidebar-primary: 145 65% 42%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 220 15% 25%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 220 15% 30%;
-    --sidebar-ring: 213 100% 50%;
+    --sidebar-ring: 145 65% 42%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(213 100% 50%), hsl(260 80% 60%));
-    --gradient-bg: linear-gradient(180deg, hsl(213 100% 97%), hsl(0 0% 100%));
+    --gradient-primary: linear-gradient(135deg, hsl(145 65% 42%), hsl(160 70% 36%));
+    --gradient-bg: linear-gradient(180deg, hsl(145 60% 97%), hsl(0 0% 100%));
     --glass-bg: hsl(0 0% 100%);
     --glass-border: hsl(220 13% 91%);
   }
@@ -105,7 +105,7 @@
   }
 
   ::selection {
-    background: hsl(213 100% 50% / 0.2);
+    background: hsl(145 65% 42% / 0.2);
     color: hsl(220 20% 18%);
   }
 
@@ -156,27 +156,27 @@
   }
 
   .glow-text {
-    color: hsl(213 100% 50%);
+    color: hsl(145 65% 42%);
   }
 
   .glow-border {
-    box-shadow: 0 0 0 2px hsl(213 100% 50% / 0.2), 0 4px 16px hsl(213 100% 50% / 0.1);
+    box-shadow: 0 0 0 2px hsl(145 65% 42% / 0.2), 0 4px 16px hsl(145 65% 42% / 0.1);
   }
 
   .glow-border-strong {
-    box-shadow: 0 0 0 2px hsl(213 100% 50% / 0.3), 0 8px 24px hsl(213 100% 50% / 0.15);
+    box-shadow: 0 0 0 2px hsl(145 65% 42% / 0.3), 0 8px 24px hsl(145 65% 42% / 0.15);
   }
 
   .gradient-btn {
-    background: hsl(213 100% 50%);
+    background: hsl(145 65% 42%);
     color: hsl(0 0% 100%);
     font-weight: 600;
     transition: all 0.2s ease;
   }
 
   .gradient-btn:hover {
-    background: hsl(213 100% 42%);
-    box-shadow: 0 4px 12px hsl(213 100% 50% / 0.3);
+    background: hsl(145 65% 35%);
+    box-shadow: 0 4px 12px hsl(145 65% 42% / 0.3);
     transform: translateY(-1px);
   }
 
@@ -207,8 +207,8 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 5px hsl(213 100% 50% / 0.2); }
-    50% { box-shadow: 0 0 20px hsl(213 100% 50% / 0.3); }
+    0%, 100% { box-shadow: 0 0 5px hsl(145 65% 42% / 0.2); }
+    50% { box-shadow: 0 0 20px hsl(145 65% 42% / 0.3); }
   }
 
   .pulse-glow {
