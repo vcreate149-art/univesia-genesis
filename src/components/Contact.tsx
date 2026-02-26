@@ -1,10 +1,11 @@
 import { useState, useEffect, FormEvent } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import i18n from "@/i18n";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { CONFIG } from "@/config";
 import { supabase } from "@/integrations/supabase/client";
-import { Send, MessageCircle, Mail, Linkedin, Calendar, Loader2, CheckCircle } from "lucide-react";
+import { Send, MessageCircle, Mail, Linkedin, Calendar, Loader2, CheckCircle, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 
 const ddiOptions = [
@@ -85,6 +86,7 @@ export const Contact = () => {
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [enhancing, setEnhancing] = useState(false);
 
   const budgets = t("contact.budgets", { returnObjects: true }) as string[];
   const timelines = t("contact.timelines", { returnObjects: true }) as string[];
@@ -180,7 +182,36 @@ export const Contact = () => {
                   {timelines.map((tl) => <option key={tl} value={tl}>{tl}</option>)}
                 </select>
               </div>
-              <textarea name="message" placeholder={t("contact.message")} rows={4} value={form.message} onChange={handleChange} className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40 transition-colors resize-none" />
+              <div className="space-y-1">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-muted-foreground/60">{t("contact.aiHelper")}</span>
+                  <button
+                    type="button"
+                    disabled={enhancing || !form.message.trim()}
+                    onClick={async () => {
+                      setEnhancing(true);
+                      try {
+                        const langMap: Record<string, string> = { pt: "Portuguese", en: "English", es: "Spanish", fr: "French", de: "German", it: "Italian", zh: "Mandarin Chinese", ja: "Japanese", ko: "Korean", ar: "Arabic", hi: "Hindi", ru: "Russian", bn: "Bengali", id: "Indonesian", sw: "Swahili", tr: "Turkish", th: "Thai", vi: "Vietnamese", nl: "Dutch", pl: "Polish" };
+                        const currentLang = i18n.language?.substring(0, 2) || "pt";
+                        const res = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/enhance-description`, {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json", Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}` },
+                          body: JSON.stringify({ projectType: form.projectType, message: form.message, language: langMap[currentLang] || "Portuguese" }),
+                        });
+                        if (!res.ok) throw new Error("AI error");
+                        const data = await res.json();
+                        if (data.enhanced) setForm((f) => ({ ...f, message: data.enhanced }));
+                      } catch { toast.error("Erro ao aprimorar descrição"); }
+                      setEnhancing(false);
+                    }}
+                    className="text-xs text-primary hover:text-primary/80 font-medium inline-flex items-center gap-1 disabled:opacity-40 transition-colors"
+                  >
+                    {enhancing ? <Loader2 size={12} className="animate-spin" /> : <Sparkles size={12} />}
+                    {enhancing ? t("contact.enhancing") : t("contact.enhanceWithAI")}
+                  </button>
+                </div>
+                <textarea name="message" placeholder={t("contact.message")} rows={4} value={form.message} onChange={handleChange} className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40 transition-colors resize-none" />
+              </div>
               <button type="submit" disabled={status === "sending" || status === "success"} className="gradient-btn w-full py-3 rounded-full text-sm font-semibold inline-flex items-center justify-center gap-2 disabled:opacity-60">
                 {status === "sending" && <Loader2 size={16} className="animate-spin" />}
                 {status === "success" && <CheckCircle size={16} />}
