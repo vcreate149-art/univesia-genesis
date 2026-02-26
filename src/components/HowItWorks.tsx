@@ -13,19 +13,19 @@ const steps = [
 
 export const HowItWorks = () => {
   return (
-    <section id="como-funciona" className="py-24 relative">
-      <div className="section-divider mb-24" />
+    <section id="como-funciona" className="py-12 sm:py-16 md:py-24 relative">
+      <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
       <div className="container mx-auto px-4 sm:px-6">
-        <ScrollReveal className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+        <ScrollReveal className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-3 sm:mb-4">
             Como <span className="text-gradient">Funciona</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2">
             Nosso processo de trabalho garante resultados excepcionais em cada etapa
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {steps.map((step, i) => (
             <ScrollReveal key={i} delay={i * 100} direction="scale">
               <TiltCard className="glass-card p-6 group hover:border-primary/30 transition-all duration-300 relative overflow-hidden">

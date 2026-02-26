@@ -65,18 +65,18 @@ export const Portfolio = () => {
   const selected = openProject !== null ? projects[openProject] : null;
 
   return (
-    <section id="portfolio" className="py-24 relative">
-      <div className="section-divider mb-24" />
+    <section id="portfolio" className="py-12 sm:py-16 md:py-24 relative">
+      <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
       <div className="container mx-auto px-4 sm:px-6">
-        <ScrollReveal className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+        <ScrollReveal className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-3 sm:mb-4">
             Nosso <span className="text-gradient">Portfólio</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">Projetos que geraram resultados reais</p>
+          <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2">Projetos que geraram resultados reais</p>
         </ScrollReveal>
 
         {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 mb-8 sm:mb-12 px-2">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -93,7 +93,7 @@ export const Portfolio = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {filtered.map((p, i) => {
             const globalIndex = projects.indexOf(p);
             return (
@@ -134,10 +134,10 @@ export const Portfolio = () => {
       {/* Modal */}
       {selected && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-background/80 backdrop-blur-sm animate-fade-in"
           onClick={() => setOpenProject(null)}
         >
-          <div className="glass-card border-primary/20 max-w-lg w-full p-8 relative" onClick={(e) => e.stopPropagation()}>
+          <div className="glass-card border-primary/20 max-w-lg w-full p-6 sm:p-8 relative rounded-t-2xl sm:rounded-2xl max-h-[85dvh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setOpenProject(null)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground" aria-label="Fechar">
               <X size={20} />
             </button>

@@ -10,11 +10,11 @@ const techLogos = [
 
 export const Partners = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="section-divider mb-24" />
+    <section className="py-12 sm:py-16 md:py-24 relative overflow-hidden">
+      <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
       <div className="container mx-auto px-4 sm:px-6">
-        <ScrollReveal className="text-center mb-12">
-          <p className="text-muted-foreground">
+        <ScrollReveal className="text-center mb-8 sm:mb-12">
+          <p className="text-sm sm:text-base text-muted-foreground px-2">
             Construímos com as melhores tecnologias do mercado
           </p>
         </ScrollReveal>
@@ -41,13 +41,13 @@ export const Partners = () => {
 
       {/* CTA */}
       <div className="container mx-auto px-4 sm:px-6">
-        <ScrollReveal className="text-center mt-20">
-          <h3 className="text-2xl md:text-3xl font-display font-bold mb-4">
+        <ScrollReveal className="text-center mt-12 sm:mt-20">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold mb-3 sm:mb-4 px-2">
             Pronto para <span className="text-gradient">transformar</span> seu negócio?
           </h3>
           <Link
             to="/contato"
-            className="gradient-btn px-10 py-4 rounded-full text-base font-semibold inline-block"
+            className="gradient-btn px-8 sm:px-10 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-semibold inline-block"
           >
             Começar Agora
           </Link>

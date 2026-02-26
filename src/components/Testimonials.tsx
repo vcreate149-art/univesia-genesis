@@ -56,11 +56,11 @@ export const Testimonials = () => {
   const t = testimonials[current];
 
   return (
-    <section className="py-24 relative">
-      <div className="section-divider mb-24" />
+    <section className="py-12 sm:py-16 md:py-24 relative">
+      <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
       <div className="container mx-auto px-4 sm:px-6">
-        <ScrollReveal className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+        <ScrollReveal className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-3 sm:mb-4">
             O que dizem nossos <span className="text-gradient">clientes</span>
           </h2>
         </ScrollReveal>
@@ -70,7 +70,7 @@ export const Testimonials = () => {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <div className="glass-card p-8 md:p-10 text-center transition-all duration-500">
+          <div className="glass-card p-5 sm:p-8 md:p-10 text-center transition-all duration-500">
             {/* Stars */}
             <div className="flex justify-center gap-1 mb-6">
               {[...Array(5)].map((_, i) => (
@@ -78,7 +78,7 @@ export const Testimonials = () => {
               ))}
             </div>
 
-            <p className="text-muted-foreground text-base md:text-lg mb-8 italic leading-relaxed">
+            <p className="text-muted-foreground text-sm sm:text-base md:text-lg mb-6 sm:mb-8 italic leading-relaxed">
               "{t.text}"
             </p>
 

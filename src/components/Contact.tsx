@@ -47,19 +47,19 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contato" className="py-24 relative">
-      <div className="section-divider mb-24" />
+    <section id="contato" className="py-12 sm:py-16 md:py-24 relative">
+      <div className="section-divider mb-12 sm:mb-16 md:mb-24" />
       <div className="container mx-auto px-4 sm:px-6">
-        <ScrollReveal className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+        <ScrollReveal className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-3 sm:mb-4">
             Fale <span className="text-gradient">Conosco</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2">
             Conte-nos sobre seu projeto e receba uma proposta personalizada
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-10 max-w-5xl mx-auto">
           {/* Form */}
           <ScrollReveal direction="left" className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="glass-card p-6 md:p-8 space-y-4">
