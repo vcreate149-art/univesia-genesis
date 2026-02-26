@@ -1,21 +1,24 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-
-const navLinks = [
-  { label: "Início", href: "/" },
-  { label: "Serviços", href: "/servicos" },
-  { label: "Portfólio", href: "/portfolio" },
-  { label: "Sobre", href: "/sobre" },
-  { label: "Blog", href: "/blog" },
-  { label: "Planos", href: "/planos" },
-  { label: "Contato", href: "/contato" },
-];
+import { useTranslation } from "react-i18next";
+import { LanguageSelector } from "@/components/LanguageSelector";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
+
+  const navLinks = [
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.services"), href: "/servicos" },
+    { label: t("nav.portfolio"), href: "/portfolio" },
+    { label: t("nav.about"), href: "/sobre" },
+    { label: t("nav.blog"), href: "/blog" },
+    { label: t("nav.plans"), href: "/planos" },
+    { label: t("nav.contact"), href: "/contato" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -62,20 +65,26 @@ export const Navbar = () => {
           ))}
         </div>
 
-        <Link
-          to="/contato"
-          className="hidden lg:block gradient-btn px-5 py-2.5 rounded-full text-sm font-semibold"
-        >
-          Fale Conosco
-        </Link>
+        <div className="hidden lg:flex items-center gap-2">
+          <LanguageSelector />
+          <Link
+            to="/contato"
+            className="gradient-btn px-5 py-2.5 rounded-full text-sm font-semibold"
+          >
+            {t("nav.contactUs")}
+          </Link>
+        </div>
 
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-foreground"
-          aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-1 lg:hidden">
+          <LanguageSelector />
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="p-2 text-foreground"
+            aria-label={mobileOpen ? t("nav.closeMenu") : t("nav.openMenu")}
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {mobileOpen && (
@@ -98,7 +107,7 @@ export const Navbar = () => {
               to="/contato"
               className="gradient-btn px-5 py-3 rounded-full text-sm font-semibold mt-2 text-center"
             >
-              Fale Conosco
+              {t("nav.contactUs")}
             </Link>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { useState, useEffect, FormEvent } from "react";
 import { useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { CONFIG } from "@/config";
 import { supabase } from "@/integrations/supabase/client";
@@ -54,7 +55,6 @@ const ddiOptions = [
 
 const countryCodeToDialCode: Record<string, string> = {};
 ddiOptions.forEach((o) => { countryCodeToDialCode[o.label] = o.code; });
-// Add aliases
 countryCodeToDialCode["US"] = "+1";
 countryCodeToDialCode["CA"] = "+1";
 countryCodeToDialCode["GB"] = "+44";
@@ -69,18 +69,9 @@ const projectTypes = [
   "Outro",
 ];
 
-const budgets = [
-  "Up to $1,000",
-  "$1,000 – $5,000",
-  "$5,000 – $15,000",
-  "$15,000 – $30,000",
-  "Above $30,000",
-];
-
-const timelines = ["1 mês", "2-3 meses", "3-6 meses", "Sem prazo definido"];
-
 export const Contact = () => {
   const [searchParams] = useSearchParams();
+  const { t } = useTranslation();
   const [ddi, setDdi] = useState("+55");
   const [phone, setPhone] = useState("");
   const preselectedService = searchParams.get("servico") || "";
@@ -95,6 +86,9 @@ export const Contact = () => {
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
+  const budgets = t("contact.budgets", { returnObjects: true }) as string[];
+  const timelines = t("contact.timelines", { returnObjects: true }) as string[];
+
   useEffect(() => {
     fetch("https://ipapi.co/json/")
       .then((r) => r.json())
@@ -103,7 +97,6 @@ export const Contact = () => {
         if (detected) {
           setDdi(detected);
         } else if (data?.country_calling_code) {
-          // Fallback: use API's calling code directly and add to selector if missing
           const callingCode = data.country_calling_code;
           setDdi(callingCode);
           if (!ddiOptions.some((o) => o.code === callingCode)) {
@@ -135,10 +128,10 @@ export const Contact = () => {
 
     if (error) {
       setStatus("error");
-      toast.error("Erro ao enviar mensagem. Tente novamente.");
+      toast.error(t("contact.errorMsg"));
     } else {
       setStatus("success");
-      toast.success("Mensagem enviada com sucesso!");
+      toast.success(t("contact.successMsg"));
     }
   };
 
@@ -148,164 +141,79 @@ export const Contact = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <ScrollReveal className="text-center mb-10 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-3 sm:mb-4">
-            Fale <span className="text-gradient">Conosco</span>
+            {t("contact.title")} <span className="text-gradient">{t("contact.titleHighlight")}</span>
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2">
-            Conte-nos sobre seu projeto e receba uma proposta personalizada
+            {t("contact.subtitle")}
           </p>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-10 max-w-5xl mx-auto">
-          {/* Form */}
           <ScrollReveal direction="left" className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="glass-card p-6 md:p-8 space-y-4 bg-background">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  name="name"
-                  placeholder="Nome completo *"
-                  required
-                  value={form.name}
-                  onChange={handleChange}
-                  className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40 transition-colors"
-                />
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="E-mail *"
-                  required
-                  value={form.email}
-                  onChange={handleChange}
-                  className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40 transition-colors"
-                />
+                <input name="name" placeholder={t("contact.name")} required value={form.name} onChange={handleChange} className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40 transition-colors" />
+                <input name="email" type="email" placeholder={t("contact.email")} required value={form.email} onChange={handleChange} className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40 transition-colors" />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex gap-2">
-                  <select
-                    value={ddi}
-                    onChange={(e) => setDdi(e.target.value)}
-                    className="w-[110px] shrink-0 bg-muted/50 border border-primary/10 rounded-lg px-2 py-3 text-sm text-foreground focus:outline-none focus:border-primary/40 transition-colors"
-                  >
+                  <select value={ddi} onChange={(e) => setDdi(e.target.value)} className="w-[110px] shrink-0 bg-muted/50 border border-primary/10 rounded-lg px-2 py-3 text-sm text-foreground focus:outline-none focus:border-primary/40 transition-colors">
                     {ddiOptions.map((o) => (
-                      <option key={o.code + o.label} value={o.code}>
-                        {o.flag} {o.code}
-                      </option>
+                      <option key={o.code + o.label} value={o.code}>{o.flag} {o.code}</option>
                     ))}
                   </select>
-                  <input
-                    name="phone"
-                    placeholder="Número WhatsApp *"
-                    required
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40 transition-colors"
-                  />
+                  <input name="phone" placeholder={t("contact.phone")} required value={phone} onChange={(e) => setPhone(e.target.value)} className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40 transition-colors" />
                 </div>
-                <input
-                  placeholder="Empresa (opcional)"
-                  value={form.company}
-                  onChange={handleChange}
-                  className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40 transition-colors"
-                />
+                <input name="company" placeholder={t("contact.company")} value={form.company} onChange={handleChange} className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40 transition-colors" />
               </div>
-              <select
-                name="projectType"
-                required
-                value={form.projectType}
-                onChange={handleChange}
-                className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary/40 transition-colors"
-              >
-                <option value="">Tipo de Projeto *</option>
-                {projectTypes.map((t) => <option key={t} value={t}>{t}</option>)}
+              <select name="projectType" required value={form.projectType} onChange={handleChange} className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary/40 transition-colors">
+                <option value="">{t("contact.projectType")}</option>
+                {projectTypes.map((pt) => <option key={pt} value={pt}>{pt}</option>)}
               </select>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <select
-                  name="budget"
-                  value={form.budget}
-                  onChange={handleChange}
-                  className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary/40 transition-colors"
-                >
-                  <option value="">Faixa de Orçamento</option>
+                <select name="budget" value={form.budget} onChange={handleChange} className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary/40 transition-colors">
+                  <option value="">{t("contact.budget")}</option>
                   {budgets.map((b) => <option key={b} value={b}>{b}</option>)}
                 </select>
-                <select
-                  name="timeline"
-                  value={form.timeline}
-                  onChange={handleChange}
-                  className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary/40 transition-colors"
-                >
-                  <option value="">Prazo Desejado</option>
-                  {timelines.map((t) => <option key={t} value={t}>{t}</option>)}
+                <select name="timeline" value={form.timeline} onChange={handleChange} className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary/40 transition-colors">
+                  <option value="">{t("contact.timeline")}</option>
+                  {timelines.map((tl) => <option key={tl} value={tl}>{tl}</option>)}
                 </select>
               </div>
-              <textarea
-                name="message"
-                placeholder="Descreva seu projeto..."
-                rows={4}
-                value={form.message}
-                onChange={handleChange}
-                className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40 transition-colors resize-none"
-              />
-              <button
-                type="submit"
-                disabled={status === "sending" || status === "success"}
-                className="gradient-btn w-full py-3 rounded-full text-sm font-semibold inline-flex items-center justify-center gap-2 disabled:opacity-60"
-              >
+              <textarea name="message" placeholder={t("contact.message")} rows={4} value={form.message} onChange={handleChange} className="w-full bg-muted/50 border border-primary/10 rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/40 transition-colors resize-none" />
+              <button type="submit" disabled={status === "sending" || status === "success"} className="gradient-btn w-full py-3 rounded-full text-sm font-semibold inline-flex items-center justify-center gap-2 disabled:opacity-60">
                 {status === "sending" && <Loader2 size={16} className="animate-spin" />}
                 {status === "success" && <CheckCircle size={16} />}
                 {status === "idle" && <Send size={16} />}
-                {status === "idle" && "Enviar Mensagem"}
-                {status === "sending" && "Enviando..."}
-                {status === "success" && "Enviado com Sucesso!"}
-                {status === "error" && "Tentar Novamente"}
+                {status === "idle" && t("contact.send")}
+                {status === "sending" && t("contact.sending")}
+                {status === "success" && t("contact.sent")}
+                {status === "error" && t("contact.retry")}
               </button>
             </form>
           </ScrollReveal>
 
-          {/* Sidebar */}
           <ScrollReveal direction="right" className="lg:col-span-2 space-y-6">
             <div className="glass-card p-6">
-              <h3 className="font-display font-semibold mb-4">Contato Direto</h3>
+              <h3 className="font-display font-semibold mb-4">{t("contact.directContact")}</h3>
               <div className="space-y-4">
-                <a
-                  href={`https://wa.me/${CONFIG.whatsapp.number}?text=${encodeURIComponent(CONFIG.whatsapp.message)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <MessageCircle size={18} className="text-primary" />
-                  WhatsApp
+                <a href={`https://wa.me/${CONFIG.whatsapp.number}?text=${encodeURIComponent(CONFIG.whatsapp.message)}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <MessageCircle size={18} className="text-primary" /> WhatsApp
                 </a>
-                <a
-                  href={`mailto:${CONFIG.social.email}`}
-                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Mail size={18} className="text-primary" />
-                  {CONFIG.social.email}
+                <a href={`mailto:${CONFIG.social.email}`} className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Mail size={18} className="text-primary" /> {CONFIG.social.email}
                 </a>
-                <a
-                  href={CONFIG.social.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Linkedin size={18} className="text-primary" />
-                  LinkedIn
+                <a href={CONFIG.social.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Linkedin size={18} className="text-primary" /> LinkedIn
                 </a>
               </div>
             </div>
 
             <div className="glass-card p-6">
-              <h3 className="font-display font-semibold mb-2">Agendar Reunião Gratuita</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                30 minutos para conversar sobre seu projeto sem compromisso
-              </p>
-              <a
-                href={CONFIG.calendly.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-btn w-full py-3 rounded-full text-sm font-semibold inline-flex items-center justify-center gap-2"
-              >
-                <Calendar size={16} /> Agendar Horário
+              <h3 className="font-display font-semibold mb-2">{t("contact.scheduleMeeting")}</h3>
+              <p className="text-sm text-muted-foreground mb-4">{t("contact.meetingDesc")}</p>
+              <a href={CONFIG.calendly.url} target="_blank" rel="noopener noreferrer" className="glass-btn w-full py-3 rounded-full text-sm font-semibold inline-flex items-center justify-center gap-2">
+                <Calendar size={16} /> {t("contact.scheduleTime")}
               </a>
             </div>
           </ScrollReveal>
