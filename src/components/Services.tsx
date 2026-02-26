@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TiltCard } from "@/components/TiltCard";
 import { Globe, Server, Smartphone, Zap, Users, Brain, X } from "lucide-react";
@@ -144,15 +145,12 @@ export const Services = () => {
                 ))}
               </div>
             </div>
-            <button
-              onClick={() => {
-                setOpenModal(null);
-                document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="gradient-btn w-full py-3 rounded-full text-sm font-semibold"
+            <Link
+              to="/contato"
+              className="gradient-btn w-full py-3 rounded-full text-sm font-semibold text-center block"
             >
               Solicitar Proposta
-            </button>
+            </Link>
           </div>
         </div>
       )}
