@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TiltCard } from "@/components/TiltCard";
 import { getTechIcon } from "@/components/TechIcons";
@@ -64,6 +64,7 @@ const services = [
 
 export const Services = ({ limit }: { limit?: number }) => {
   const [openModal, setOpenModal] = useState<number | null>(null);
+  const navigate = useNavigate();
   const selected = openModal !== null ? services[openModal] : null;
   const visibleServices = limit ? services.slice(0, limit) : services;
 
@@ -162,12 +163,23 @@ export const Services = ({ limit }: { limit?: number }) => {
                 ))}
               </div>
             </div>
-            <Link
-              to="/contato"
+            <button
+              onClick={() => {
+                const serviceToProject: Record<string, string> = {
+                  "Websites e Landing Pages": "Website / Landing Page",
+                  "Sistemas Web Personalizados": "Sistema Web",
+                  "Aplicativos Mobile": "Aplicativo Mobile",
+                  "Automações e Integrações": "Automação / Integração",
+                  "Consultoria Técnica": "Consultoria",
+                  "Inteligência Artificial": "Inteligência Artificial",
+                };
+                const type = serviceToProject[selected.title] || "Outro";
+                navigate(`/contato?servico=${encodeURIComponent(type)}`);
+              }}
               className="gradient-btn w-full py-3 rounded-full text-sm font-semibold text-center block"
             >
               Solicitar Proposta
-            </Link>
+            </button>
           </div>
         </div>
       )}
