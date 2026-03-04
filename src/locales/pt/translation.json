@@ -286,5 +286,545 @@
     "title": "404",
     "message": "Ops! Página não encontrada",
     "backHome": "Voltar para o Início"
+  },
+  "serviceDetail": {
+    "backToServices": "Voltar aos Serviços",
+    "otherServices": "Explore Outros Serviços",
+    "services": [
+      {
+        "title": "Websites e Landing Pages",
+        "subtitle": "Sites que convertem visitantes em clientes",
+        "heroDescription": "Criamos websites e landing pages de alta performance, otimizados para SEO e conversão. Design moderno, carregamento ultrarrápido e experiência impecável em qualquer dispositivo.",
+        "overview": {
+          "title": "Visão Geral",
+          "paragraphs": [
+            "Um site é a vitrine digital da sua empresa — muitas vezes o primeiro contato que potenciais clientes terão com a sua marca. Na UniveSIA, acreditamos que cada pixel importa e que design e performance andam juntos.",
+            "Nossos websites são construídos com as tecnologias mais modernas do mercado (React, Next.js, Tailwind CSS) garantindo velocidade de carregamento excepcional, SEO nativo e uma experiência de usuário que encanta.",
+            "Oferecemos desde landing pages simples e diretas para campanhas de marketing até portais corporativos completos com múltiplas páginas, blog integrado, área do cliente e dashboards administrativos.",
+            "Cada projeto é precedido por uma análise completa do seu negócio, público-alvo e concorrência, para que o resultado final não seja apenas bonito, mas estrategicamente eficaz."
+          ],
+          "highlights": [
+            { "label": "Tempo de carregamento", "value": "<1s" },
+            { "label": "Score SEO médio", "value": "95+" },
+            { "label": "Taxa de conversão", "value": "+40%" },
+            { "label": "Satisfação dos clientes", "value": "98%" }
+          ]
+        },
+        "advantages": {
+          "title": "Vantagens",
+          "intro": "Conheça os diferenciais que fazem os nossos sites se destacarem no mercado:",
+          "items": [
+            { "title": "Performance Excepcional", "description": "Sites com carregamento em menos de 1 segundo usando técnicas avançadas de otimização, code splitting e lazy loading." },
+            { "title": "SEO Nativo", "description": "Cada site é construído com SEO na fundação — meta tags, schema markup, sitemap, robots.txt e URLs otimizadas desde o primeiro deploy." },
+            { "title": "Design Responsivo", "description": "Layout perfeito em qualquer dispositivo — desktop, tablet ou smartphone — com abordagem mobile-first." },
+            { "title": "Conversão Otimizada", "description": "CTAs estratégicos, formulários inteligentes e A/B testing para maximizar a taxa de conversão do seu site." },
+            { "title": "Segurança Avançada", "description": "HTTPS, proteção contra ataques XSS e CSRF, headers de segurança configurados e atualizações automáticas." },
+            { "title": "Manutenção Simplificada", "description": "Painel administrativo intuitivo para você atualizar conteúdo sem precisar de conhecimento técnico." }
+          ]
+        },
+        "process": {
+          "title": "Processo",
+          "intro": "Nosso processo de criação de sites é estruturado em etapas claras para garantir o melhor resultado:",
+          "steps": [
+            { "title": "Briefing e Discovery", "description": "Reunião inicial para entender seu negócio, público-alvo, concorrência e objetivos do site. Definimos KPIs e métricas de sucesso." },
+            { "title": "Wireframing", "description": "Criamos a estrutura visual do site com wireframes detalhados, definindo a hierarquia de informações e fluxos de navegação." },
+            { "title": "Design Visual", "description": "Design completo em alta fidelidade seguindo sua identidade visual, com versões para desktop e mobile para aprovação." },
+            { "title": "Desenvolvimento Front-end", "description": "Codificação com React/Next.js e Tailwind CSS, garantindo performance, acessibilidade e compatibilidade cross-browser." },
+            { "title": "Integração e Backend", "description": "Conexão com CMS, formulários, APIs de pagamento, analytics e quaisquer sistemas necessários." },
+            { "title": "Testes e Otimização", "description": "Testes de usabilidade, performance (Lighthouse), SEO, acessibilidade (WCAG) e cross-device antes do lançamento." },
+            { "title": "Deploy e Monitoramento", "description": "Publicação em infraestrutura de alta disponibilidade com CDN global, SSL e monitoramento contínuo de uptime." }
+          ]
+        },
+        "tutorials": {
+          "title": "Guias",
+          "intro": "Aprenda como aproveitar ao máximo o seu website:",
+          "items": [
+            {
+              "title": "Como definir o conteúdo ideal para sua landing page",
+              "description": "Uma landing page eficaz precisa de elementos estratégicos posicionados corretamente.",
+              "steps": [
+                "Defina seu público-alvo e a dor principal que você resolve",
+                "Crie uma headline clara e direta que comunique o valor em menos de 5 segundos",
+                "Adicione prova social: depoimentos, logos de clientes, números de resultados",
+                "Inclua um CTA (chamada para ação) visível e com texto orientado à ação",
+                "Use imagens reais e de alta qualidade ao invés de bancos genéricos",
+                "Adicione uma seção de FAQ para quebrar objeções comuns"
+              ]
+            },
+            {
+              "title": "Otimizando seu site para Google (SEO)",
+              "description": "Entenda os fundamentos de SEO para posicionar seu site organicamente.",
+              "steps": [
+                "Pesquise palavras-chave relevantes usando ferramentas como Google Keyword Planner",
+                "Otimize os meta titles e descriptions de cada página",
+                "Crie conteúdo original e relevante de pelo menos 300 palavras por página",
+                "Garanta que as imagens tenham alt text descritivo",
+                "Implemente dados estruturados (Schema.org) para rich snippets",
+                "Monitore o desempenho no Google Search Console regularmente"
+              ]
+            },
+            {
+              "title": "Gerenciando o conteúdo do seu site",
+              "description": "Saiba como atualizar textos, imagens e informações do seu site de forma autônoma.",
+              "steps": [
+                "Acesse o painel administrativo com suas credenciais",
+                "Navegue até a seção de conteúdo que deseja editar",
+                "Faça as alterações no editor visual (WYSIWYG)",
+                "Visualize as mudanças no modo preview antes de publicar",
+                "Clique em Publicar para que as alterações fiquem visíveis"
+              ]
+            }
+          ]
+        },
+        "faq": {
+          "title": "Perguntas Frequentes",
+          "items": [
+            { "question": "Quanto tempo leva para criar um site?", "answer": "O prazo médio é de 2 a 4 semanas, dependendo da complexidade do projeto. Landing pages simples podem ficar prontas em 1 semana, enquanto portais mais complexos podem levar até 6 semanas." },
+            { "question": "O site será responsivo?", "answer": "Sim! Todos os nossos sites são desenvolvidos com abordagem mobile-first e testados em dezenas de dispositivos e navegadores para garantir uma experiência perfeita." },
+            { "question": "Posso editar o conteúdo sozinho depois?", "answer": "Sim, entregamos um painel administrativo intuitivo para que você possa atualizar textos, imagens e informações sem precisar de um desenvolvedor." },
+            { "question": "O site já vem otimizado para SEO?", "answer": "Absolutamente. SEO técnico é parte fundamental do nosso processo — meta tags, sitemap, schema markup, velocidade e URLs amigáveis são configurados desde o início." },
+            { "question": "Vocês oferecem hospedagem?", "answer": "Sim, oferecemos hospedagem de alta performance com CDN global, SSL gratuito e monitoramento 24/7. Também configuramos em provedores de sua preferência." },
+            { "question": "Qual o investimento para criar um site?", "answer": "O investimento varia conforme a complexidade. Landing pages a partir de R$ 2.000 e sites completos a partir de R$ 5.000. Entre em contato para um orçamento personalizado." }
+          ]
+        },
+        "cta": {
+          "title": "Pronto para ter um site incrível?",
+          "description": "Vamos transformar sua presença digital. Solicite uma proposta personalizada e descubra como podemos ajudar seu negócio a crescer online.",
+          "button": "Solicitar Proposta"
+        }
+      },
+      {
+        "title": "Sistemas Web Personalizados",
+        "subtitle": "Aplicações sob medida para seu negócio",
+        "heroDescription": "Desenvolvemos sistemas web completos para automatizar processos, gerenciar dados e otimizar operações. Desde CRMs até ERPs, com arquitetura escalável e segura.",
+        "overview": {
+          "title": "Visão Geral",
+          "paragraphs": [
+            "Sistemas web personalizados eliminam as limitações de softwares genéricos, oferecendo uma solução que se adapta perfeitamente aos processos únicos do seu negócio.",
+            "Na UniveSIA, desenvolvemos aplicações web robustas usando tecnologias modernas como React, Node.js e PostgreSQL, com foco em escalabilidade, segurança e experiência do usuário.",
+            "Nossos sistemas incluem painéis administrativos completos, relatórios em tempo real, integrações com APIs externas e controle de acesso granular por perfis de usuário.",
+            "Cada sistema é projetado para crescer junto com o seu negócio, com arquitetura modular que permite adicionar novas funcionalidades sem reescrever o que já existe."
+          ],
+          "highlights": [
+            { "label": "Uptime garantido", "value": "99.9%" },
+            { "label": "Redução de processos manuais", "value": "70%" },
+            { "label": "Tempo de resposta", "value": "<200ms" },
+            { "label": "Projetos entregues", "value": "50+" }
+          ]
+        },
+        "advantages": {
+          "title": "Vantagens",
+          "intro": "Veja por que um sistema personalizado é a melhor escolha para o seu negócio:",
+          "items": [
+            { "title": "100% Personalizado", "description": "Cada funcionalidade é construída para atender exatamente os processos do seu negócio, sem adaptações forçadas." },
+            { "title": "Escalabilidade", "description": "Arquitetura preparada para crescer com o seu negócio — de 10 a 10.000 usuários sem perda de performance." },
+            { "title": "Integrações Ilimitadas", "description": "Conecte com ERPs, gateways de pagamento, APIs de terceiros e qualquer sistema que sua empresa utilize." },
+            { "title": "Segurança de Dados", "description": "Criptografia, autenticação multifator, logs de auditoria e conformidade com LGPD." },
+            { "title": "Relatórios Avançados", "description": "Dashboards interativos com gráficos e KPIs em tempo real para tomada de decisão baseada em dados." },
+            { "title": "Suporte Contínuo", "description": "Manutenção preventiva, atualizações de segurança e suporte técnico dedicado pós-entrega." }
+          ]
+        },
+        "process": {
+          "title": "Processo",
+          "intro": "O desenvolvimento de sistemas personalizados segue uma metodologia ágil e iterativa:",
+          "steps": [
+            { "title": "Levantamento de Requisitos", "description": "Mapeamento detalhado dos processos, fluxos de trabalho e regras de negócio do seu sistema." },
+            { "title": "Arquitetura e Modelagem", "description": "Definição da arquitetura técnica, modelagem de banco de dados e planejamento de integrações." },
+            { "title": "Prototipagem", "description": "Criação de protótipos interativos para validação da interface e fluxos antes do desenvolvimento." },
+            { "title": "Desenvolvimento em Sprints", "description": "Entregas parciais a cada 2 semanas para acompanhamento e feedback contínuo." },
+            { "title": "Testes Automatizados", "description": "Suíte de testes unitários, de integração e end-to-end para garantir qualidade." },
+            { "title": "Deploy e Treinamento", "description": "Publicação em ambiente de produção com treinamento da equipe para uso do sistema." }
+          ]
+        },
+        "tutorials": {
+          "title": "Guias",
+          "intro": "Orientações para extrair o máximo do seu sistema personalizado:",
+          "items": [
+            {
+              "title": "Como planejar seu sistema web",
+              "description": "Dicas essenciais para definir o escopo ideal do seu sistema.",
+              "steps": [
+                "Liste todos os processos manuais que deseja automatizar",
+                "Identifique os perfis de usuário que utilizarão o sistema",
+                "Defina quais relatórios e KPIs são essenciais para o negócio",
+                "Mapeie as integrações necessárias com sistemas existentes",
+                "Priorize funcionalidades por impacto vs. complexidade"
+              ]
+            },
+            {
+              "title": "Boas práticas de segurança para sistemas web",
+              "description": "Proteja os dados do seu sistema seguindo estas recomendações.",
+              "steps": [
+                "Implemente autenticação forte com senhas seguras e 2FA",
+                "Configure perfis de acesso com permissões granulares",
+                "Mantenha backups automáticos diários dos dados",
+                "Monitore logs de acesso para detectar atividades suspeitas",
+                "Mantenha todas as dependências e frameworks atualizados"
+              ]
+            }
+          ]
+        },
+        "faq": {
+          "title": "Perguntas Frequentes",
+          "items": [
+            { "question": "Quanto tempo leva para desenvolver um sistema?", "answer": "Depende da complexidade. Sistemas simples de 4 a 8 semanas, sistemas completos de 8 a 16 semanas. Trabalhamos com entregas incrementais para que você já possa usar partes do sistema durante o desenvolvimento." },
+            { "question": "Posso solicitar alterações durante o desenvolvimento?", "answer": "Sim! Trabalhamos com metodologia ágil, com entregas a cada 2 semanas e reuniões de feedback, permitindo ajustes ao longo do processo." },
+            { "question": "O sistema funciona em celulares?", "answer": "Sim, todos os nossos sistemas são responsivos e funcionam perfeitamente em qualquer dispositivo." },
+            { "question": "Vocês fazem manutenção após a entrega?", "answer": "Sim, oferecemos planos de suporte e manutenção contínua com atualizações de segurança, correções e melhorias." },
+            { "question": "É possível migrar dados de outro sistema?", "answer": "Absolutamente. Fazemos a migração completa de dados de sistemas legados, planilhas ou bancos de dados existentes." }
+          ]
+        },
+        "cta": {
+          "title": "Vamos criar o sistema ideal para seu negócio?",
+          "description": "Elimine processos manuais e ganhe eficiência com um sistema web feito sob medida para a sua operação.",
+          "button": "Solicitar Proposta"
+        }
+      },
+      {
+        "title": "Aplicativos Mobile",
+        "subtitle": "Apps nativos e cross-platform de alta performance",
+        "heroDescription": "Desenvolvemos aplicativos mobile para iOS e Android com experiência nativa, design intuitivo e performance otimizada para engajar seus usuários.",
+        "overview": {
+          "title": "Visão Geral",
+          "paragraphs": [
+            "O mobile é o canal principal de interação digital — mais de 70% do tráfego web vem de dispositivos móveis. Ter um aplicativo dedicado é a melhor forma de engajar e fidelizar seus usuários.",
+            "Trabalhamos com React Native e Flutter para desenvolvimento cross-platform, garantindo uma única base de código que funciona perfeitamente em iOS e Android com performance nativa.",
+            "Nossos apps incluem funcionalidades como push notifications, modo offline, geolocalização, câmera, pagamentos in-app e integração com wearables.",
+            "Do conceito ao lançamento nas lojas (App Store e Google Play), cuidamos de todo o processo: design, desenvolvimento, testes, publicação e acompanhamento pós-lançamento."
+          ],
+          "highlights": [
+            { "label": "Avaliação média nas lojas", "value": "4.8★" },
+            { "label": "Downloads combinados", "value": "100K+" },
+            { "label": "Retenção D30", "value": "45%" },
+            { "label": "Crash-free rate", "value": "99.5%" }
+          ]
+        },
+        "advantages": {
+          "title": "Vantagens",
+          "intro": "Por que investir em um aplicativo mobile com a UniveSIA:",
+          "items": [
+            { "title": "Cross-Platform", "description": "Uma única base de código para iOS e Android, reduzindo custos e tempo de desenvolvimento em até 40%." },
+            { "title": "Performance Nativa", "description": "Apps com performance indistinguível de nativos, usando React Native ou Flutter com otimizações avançadas." },
+            { "title": "UX Mobile-First", "description": "Design pensado especificamente para interação touch, com gestos intuitivos e navegação fluida." },
+            { "title": "Push Notifications", "description": "Sistema de notificações personalizadas para reengajar usuários e aumentar a retenção." },
+            { "title": "Modo Offline", "description": "Funcionalidades essenciais disponíveis mesmo sem conexão com a internet." },
+            { "title": "Publicação nas Lojas", "description": "Cuidamos de todo o processo de publicação na App Store e Google Play, incluindo otimização de ASO." }
+          ]
+        },
+        "process": {
+          "title": "Processo",
+          "intro": "Do conceito ao lançamento, nosso processo garante qualidade em cada etapa:",
+          "steps": [
+            { "title": "Ideação e Pesquisa", "description": "Análise de mercado, personas de usuário e definição do MVP (Produto Mínimo Viável)." },
+            { "title": "UX/UI Design", "description": "Wireframes, protótipos interativos e design de interface seguindo guidelines iOS/Android." },
+            { "title": "Desenvolvimento", "description": "Codificação em React Native ou Flutter com integração a APIs e serviços de backend." },
+            { "title": "Testes em Dispositivos", "description": "Testes em dezenas de dispositivos reais e emuladores para garantir compatibilidade." },
+            { "title": "Beta Testing", "description": "Distribuição beta via TestFlight/Firebase para feedback de usuários reais antes do lançamento." },
+            { "title": "Lançamento e ASO", "description": "Publicação nas lojas com otimização de screenshots, descrição e palavras-chave." }
+          ]
+        },
+        "tutorials": {
+          "title": "Guias",
+          "intro": "Orientações para o sucesso do seu aplicativo mobile:",
+          "items": [
+            {
+              "title": "Como definir o MVP do seu aplicativo",
+              "description": "Dicas para lançar um app focado e eficiente.",
+              "steps": [
+                "Liste todas as funcionalidades desejadas para o app",
+                "Classifique cada uma como essencial, importante ou desejável",
+                "Selecione apenas as essenciais para a primeira versão (MVP)",
+                "Defina métricas de sucesso para validar a aceitação do mercado",
+                "Planeje iterações futuras baseadas em feedback dos usuários"
+              ]
+            },
+            {
+              "title": "Estratégias para aumentar downloads",
+              "description": "Técnicas comprovadas para crescer a base de usuários.",
+              "steps": [
+                "Otimize o título e descrição do app com palavras-chave relevantes (ASO)",
+                "Crie screenshots atrativas que mostrem as funcionalidades principais",
+                "Incentive avaliações positivas com solicitações no momento certo",
+                "Use deep links para conectar campanhas de marketing ao app",
+                "Implemente um programa de referral (indicação) dentro do app"
+              ]
+            }
+          ]
+        },
+        "faq": {
+          "title": "Perguntas Frequentes",
+          "items": [
+            { "question": "É melhor fazer app nativo ou cross-platform?", "answer": "Na maioria dos casos, cross-platform (React Native/Flutter) oferece o melhor custo-benefício, com performance muito próxima do nativo e economia de 30-40% no desenvolvimento." },
+            { "question": "Quanto custa desenvolver um aplicativo?", "answer": "Apps simples a partir de R$ 15.000, apps intermediários de R$ 30.000 a R$ 80.000 e apps complexos acima de R$ 100.000. Tudo depende das funcionalidades e integrações necessárias." },
+            { "question": "Vocês publicam nas lojas?", "answer": "Sim! Cuidamos de todo o processo de publicação na App Store e Google Play, incluindo criação de contas de desenvolvedor se necessário." },
+            { "question": "O app funciona offline?", "answer": "Sim, implementamos cache local e sincronização inteligente para que funcionalidades essenciais estejam disponíveis mesmo sem internet." },
+            { "question": "Como funciona a manutenção do app?", "answer": "Oferecemos planos de manutenção mensal que incluem atualizações de segurança, correções de bugs, adaptação a novas versões do iOS/Android e melhorias contínuas." }
+          ]
+        },
+        "cta": {
+          "title": "Vamos criar seu aplicativo?",
+          "description": "Do conceito à publicação nas lojas, transformamos sua ideia em um app que os usuários amam usar.",
+          "button": "Solicitar Proposta"
+        }
+      },
+      {
+        "title": "Automações e Integrações",
+        "subtitle": "Elimine tarefas repetitivas e conecte seus sistemas",
+        "heroDescription": "Automatizamos fluxos de trabalho, integramos sistemas e eliminamos tarefas manuais para aumentar a produtividade da sua equipe significativamente.",
+        "overview": {
+          "title": "Visão Geral",
+          "paragraphs": [
+            "Empresas perdem em média 20% do tempo de seus colaboradores com tarefas manuais e repetitivas que poderiam ser automatizadas. Na UniveSIA, identificamos esses gargalos e os eliminamos.",
+            "Utilizamos ferramentas como n8n, Zapier, Make e desenvolvimento customizado para criar automações que conectam seus sistemas, reduzem erros e liberam sua equipe para atividades estratégicas.",
+            "Desde automações simples como envio de emails até fluxos complexos envolvendo múltiplos sistemas, APIs e regras de negócio — temos a solução certa para cada cenário.",
+            "Nossas integrações garantem que dados fluam automaticamente entre seus sistemas, eliminando retrabalho e garantindo consistência das informações."
+          ],
+          "highlights": [
+            { "label": "Horas economizadas/mês", "value": "200+" },
+            { "label": "Redução de erros", "value": "95%" },
+            { "label": "ROI médio", "value": "300%" },
+            { "label": "Automações ativas", "value": "500+" }
+          ]
+        },
+        "advantages": {
+          "title": "Vantagens",
+          "intro": "Descubra como automações podem transformar sua operação:",
+          "items": [
+            { "title": "Economia de Tempo", "description": "Elimine horas gastas em tarefas repetitivas — sua equipe foca no que realmente importa." },
+            { "title": "Zero Erros Humanos", "description": "Automações executam tarefas com precisão, eliminando erros de digitação, cálculo e esquecimento." },
+            { "title": "Escalabilidade Instantânea", "description": "Automatize uma vez e processe milhares de operações sem aumentar a equipe." },
+            { "title": "Integrações Ilimitadas", "description": "Conecte CRM, ERP, e-commerce, redes sociais, email marketing e centenas de outras ferramentas." },
+            { "title": "Monitoramento 24/7", "description": "Automações trabalham 24 horas por dia, com alertas automáticos em caso de falhas." },
+            { "title": "Retorno Rápido", "description": "A maioria das automações se paga em menos de 3 meses com a economia de tempo e redução de erros." }
+          ]
+        },
+        "process": {
+          "title": "Processo",
+          "intro": "Nosso processo para criar automações eficientes e confiáveis:",
+          "steps": [
+            { "title": "Mapeamento de Processos", "description": "Documentamos todos os processos atuais, identificando gargalos e oportunidades de automação." },
+            { "title": "Priorização", "description": "Priorizamos automações por impacto no negócio vs. complexidade de implementação." },
+            { "title": "Design do Fluxo", "description": "Desenhamos o fluxo automatizado com todas as condições, exceções e tratamentos de erro." },
+            { "title": "Implementação", "description": "Configuramos e desenvolvemos as automações usando as ferramentas mais adequadas." },
+            { "title": "Testes e Validação", "description": "Testes rigorosos com cenários reais para garantir que tudo funcione perfeitamente." },
+            { "title": "Monitoramento Contínuo", "description": "Acompanhamento ativo com dashboards e alertas para garantir operação contínua." }
+          ]
+        },
+        "tutorials": {
+          "title": "Guias",
+          "intro": "Entenda como automações podem revolucionar seu negócio:",
+          "items": [
+            {
+              "title": "Identificando oportunidades de automação",
+              "description": "Aprenda a encontrar processos que podem ser automatizados na sua empresa.",
+              "steps": [
+                "Liste todas as tarefas repetitivas da sua equipe durante uma semana",
+                "Calcule o tempo gasto em cada tarefa manual por mês",
+                "Identifique tarefas que seguem regras claras e previsíveis",
+                "Priorize as que consomem mais tempo e são mais propensas a erros",
+                "Estime o ROI da automação (tempo economizado × custo/hora)"
+              ]
+            },
+            {
+              "title": "Como funciona uma automação com n8n",
+              "description": "Conheça o fluxo básico de uma automação profissional.",
+              "steps": [
+                "Definimos o gatilho (trigger) — o evento que inicia a automação",
+                "Configuramos as ações que devem ser executadas automaticamente",
+                "Adicionamos condições e filtros para cenários específicos",
+                "Implementamos tratamento de erros e fallbacks",
+                "Ativamos monitoramento e alertas para acompanhar a execução"
+              ]
+            }
+          ]
+        },
+        "faq": {
+          "title": "Perguntas Frequentes",
+          "items": [
+            { "question": "Que tipo de tarefas podem ser automatizadas?", "answer": "Praticamente qualquer tarefa repetitiva: envio de emails, geração de relatórios, atualização de planilhas, notificações, sincronização de dados entre sistemas, processamento de pedidos, e muito mais." },
+            { "question": "Preciso mudar meus sistemas atuais?", "answer": "Não! Nossas automações se integram aos sistemas que você já usa, criando pontes entre eles sem substituir nenhuma ferramenta." },
+            { "question": "As automações podem falhar?", "answer": "Implementamos tratamento robusto de erros, retentativas automáticas e alertas instantâneos. Em caso de falha, você é notificado e a automação tenta novamente automaticamente." },
+            { "question": "Qual o prazo de implementação?", "answer": "Automações simples ficam prontas em 1 a 3 dias. Fluxos complexos com múltiplas integrações podem levar de 1 a 3 semanas." }
+          ]
+        },
+        "cta": {
+          "title": "Pronto para automatizar seu negócio?",
+          "description": "Elimine tarefas manuais e ganhe produtividade. Vamos mapear as melhores oportunidades de automação para sua empresa.",
+          "button": "Solicitar Proposta"
+        }
+      },
+      {
+        "title": "Consultoria Técnica",
+        "subtitle": "Orientação especializada para decisões tecnológicas",
+        "heroDescription": "Oferecemos consultoria em arquitetura de software, code review, migração de sistemas, otimização de performance e estratégia tecnológica para empresas.",
+        "overview": {
+          "title": "Visão Geral",
+          "paragraphs": [
+            "Decisões tecnológicas erradas podem custar meses de desenvolvimento e milhares de reais. Nossa consultoria técnica ajuda sua empresa a fazer escolhas informadas e estratégicas.",
+            "Nossa equipe de especialistas traz experiência em dezenas de projetos para analisar sua infraestrutura atual, identificar pontos de melhoria e traçar um roadmap de evolução tecnológica.",
+            "Oferecemos desde sessões pontuais de code review até acompanhamento contínuo como CTO-as-a-Service, adaptando o nível de envolvimento às necessidades do seu negócio.",
+            "Cada recomendação é fundamentada em dados, benchmarks do mercado e melhores práticas da indústria, garantindo que sua empresa esteja sempre um passo à frente."
+          ],
+          "highlights": [
+            { "label": "Empresas atendidas", "value": "30+" },
+            { "label": "Redução de custos de infra", "value": "40%" },
+            { "label": "Performance melhorada", "value": "3x" },
+            { "label": "Satisfação", "value": "100%" }
+          ]
+        },
+        "advantages": {
+          "title": "Vantagens",
+          "intro": "Como nossa consultoria agrega valor ao seu negócio:",
+          "items": [
+            { "title": "Visão Imparcial", "description": "Análise objetiva da sua infraestrutura e stack tecnológico, sem viés de fornecedor ou produto." },
+            { "title": "Economia de Recursos", "description": "Evite investimentos em tecnologias inadequadas e reduza custos operacionais com recomendações assertivas." },
+            { "title": "Aceleração de Entregas", "description": "Identifique gargalos no processo de desenvolvimento e implemente práticas que aceleram a entrega." },
+            { "title": "Segurança Reforçada", "description": "Auditoria de segurança completa com identificação de vulnerabilidades e plano de mitigação." },
+            { "title": "Capacitação da Equipe", "description": "Workshops e mentoria técnica para elevar o nível da sua equipe de desenvolvimento." },
+            { "title": "Roadmap Estratégico", "description": "Plano de evolução tecnológica alinhado aos objetivos de negócio de curto, médio e longo prazo." }
+          ]
+        },
+        "process": {
+          "title": "Processo",
+          "intro": "Como funciona nossa consultoria técnica:",
+          "steps": [
+            { "title": "Diagnóstico Inicial", "description": "Análise completa da infraestrutura, codebase, processos e equipe para entender o cenário atual." },
+            { "title": "Identificação de Problemas", "description": "Mapeamento detalhado de problemas, riscos e oportunidades de melhoria." },
+            { "title": "Relatório de Recomendações", "description": "Documento detalhado com análise, recomendações priorizadas e estimativa de impacto." },
+            { "title": "Plano de Ação", "description": "Roadmap de implementação com cronograma, responsáveis e métricas de sucesso." },
+            { "title": "Acompanhamento", "description": "Suporte durante a implementação das recomendações com reuniões de follow-up." }
+          ]
+        },
+        "tutorials": {
+          "title": "Guias",
+          "intro": "Conhecimentos essenciais para decisões tecnológicas melhores:",
+          "items": [
+            {
+              "title": "Quando contratar uma consultoria técnica",
+              "description": "Sinais de que sua empresa precisa de orientação especializada.",
+              "steps": [
+                "Entregas estão cada vez mais lentas sem causa aparente",
+                "A equipe não consegue acompanhar a demanda de features",
+                "Custos de infraestrutura estão crescendo desproporcionalmente",
+                "Há dúvidas sobre qual tecnologia ou arquitetura adotar",
+                "O sistema atual apresenta problemas frequentes de performance ou estabilidade"
+              ]
+            },
+            {
+              "title": "Como preparar sua empresa para uma consultoria",
+              "description": "Maximize o valor da consultoria com estes preparativos.",
+              "steps": [
+                "Documente os principais desafios técnicos que a empresa enfrenta",
+                "Prepare acesso ao repositório de código e infraestrutura",
+                "Liste as métricas de performance e disponibilidade atuais",
+                "Identifique os stakeholders que participarão do processo",
+                "Defina os objetivos e expectativas para a consultoria"
+              ]
+            }
+          ]
+        },
+        "faq": {
+          "title": "Perguntas Frequentes",
+          "items": [
+            { "question": "Qual a diferença entre consultoria pontual e contínua?", "answer": "A consultoria pontual resolve uma demanda específica (ex: code review, escolha de tecnologia). A contínua (CTO-as-a-Service) oferece acompanhamento regular com reuniões semanais e suporte contínuo." },
+            { "question": "Vocês consultam sobre qualquer tecnologia?", "answer": "Temos especialidade em web (React, Node.js, Python), mobile (React Native, Flutter), cloud (AWS, GCP) e DevOps. Para tecnologias fora do nosso core, indicamos parceiros especialistas." },
+            { "question": "Quanto custa uma consultoria?", "answer": "Sessões pontuais a partir de R$ 500/hora. Pacotes mensais de acompanhamento a partir de R$ 5.000/mês. O investimento depende do escopo e frequência." },
+            { "question": "A consultoria inclui implementação?", "answer": "A consultoria foca em análise e recomendações. Se desejar, podemos também executar a implementação como um projeto separado." }
+          ]
+        },
+        "cta": {
+          "title": "Precisa de orientação tecnológica?",
+          "description": "Agende uma conversa com nossos especialistas e descubra como podemos ajudar sua empresa a tomar decisões tecnológicas mais inteligentes.",
+          "button": "Agendar Consultoria"
+        }
+      },
+      {
+        "title": "Inteligência Artificial",
+        "subtitle": "Soluções inteligentes com IA de ponta",
+        "heroDescription": "Implementamos chatbots, assistentes virtuais, análise preditiva e automação inteligente com modelos de linguagem (LLMs) e visão computacional.",
+        "overview": {
+          "title": "Visão Geral",
+          "paragraphs": [
+            "A Inteligência Artificial deixou de ser ficção científica e se tornou uma ferramenta essencial para empresas que querem se manter competitivas. Na UniveSIA, tornamos a IA acessível e prática.",
+            "Implementamos soluções que vão desde chatbots de atendimento até sistemas complexos de análise preditiva, processamento de documentos e visão computacional.",
+            "Trabalhamos com os modelos mais avançados do mercado (GPT, Gemini, Claude) e também com modelos open-source para cenários que exigem privacidade total dos dados.",
+            "Cada solução de IA é customizada para o contexto do seu negócio, treinada com seus dados e integrada aos seus sistemas existentes para máximo impacto."
+          ],
+          "highlights": [
+            { "label": "Redução de custos de atendimento", "value": "60%" },
+            { "label": "Precisão dos modelos", "value": "95%+" },
+            { "label": "Tempo de resposta", "value": "<2s" },
+            { "label": "Soluções implementadas", "value": "40+" }
+          ]
+        },
+        "advantages": {
+          "title": "Vantagens",
+          "intro": "Como a IA pode revolucionar seu negócio:",
+          "items": [
+            { "title": "Atendimento 24/7", "description": "Chatbots inteligentes que atendem clientes a qualquer hora, em qualquer idioma, com qualidade humana." },
+            { "title": "Análise Preditiva", "description": "Preveja tendências, demandas e comportamentos de clientes usando machine learning nos seus dados." },
+            { "title": "Processamento de Documentos", "description": "Extraia, classifique e processe informações de documentos, contratos e formulários automaticamente." },
+            { "title": "Personalização em Escala", "description": "Ofereça experiências personalizadas para cada cliente usando recomendações baseadas em IA." },
+            { "title": "Visão Computacional", "description": "Análise de imagens e vídeos para controle de qualidade, segurança e reconhecimento de padrões." },
+            { "title": "Automação Inteligente", "description": "Diferente de automações baseadas em regras, a IA toma decisões em cenários ambíguos e complexos." }
+          ]
+        },
+        "process": {
+          "title": "Processo",
+          "intro": "Como implementamos soluções de IA no seu negócio:",
+          "steps": [
+            { "title": "Identificação de Oportunidades", "description": "Mapeamos os processos onde a IA pode gerar mais impacto no seu negócio." },
+            { "title": "Coleta e Preparação de Dados", "description": "Organizamos e limpamos os dados necessários para treinar os modelos de IA." },
+            { "title": "Escolha do Modelo", "description": "Selecionamos o modelo de IA mais adequado — proprietário ou open-source — para cada caso." },
+            { "title": "Customização e Treinamento", "description": "Fine-tuning do modelo com dados específicos do seu negócio para máxima precisão." },
+            { "title": "Integração", "description": "Conectamos a solução de IA aos seus sistemas (CRM, site, app, WhatsApp, etc.)." },
+            { "title": "Monitoramento e Melhoria", "description": "Acompanhamento contínuo da performance com refinamento baseado em feedback real." }
+          ]
+        },
+        "tutorials": {
+          "title": "Guias",
+          "intro": "Entenda como a IA pode ser aplicada no seu contexto:",
+          "items": [
+            {
+              "title": "Como um chatbot com IA pode ajudar seu negócio",
+              "description": "Entenda os benefícios e possibilidades de um chatbot inteligente.",
+              "steps": [
+                "Identifique as perguntas mais frequentes dos seus clientes",
+                "Prepare uma base de conhecimento com informações sobre produtos e serviços",
+                "Defina o tom de voz e personalidade do chatbot",
+                "Escolha os canais de atendimento (site, WhatsApp, Instagram)",
+                "Monitore as conversas e alimente o bot com novas informações regularmente"
+              ]
+            },
+            {
+              "title": "IA para análise de dados empresariais",
+              "description": "Descubra insights ocultos nos dados da sua empresa.",
+              "steps": [
+                "Identifique as fontes de dados da sua empresa (CRM, vendas, financeiro)",
+                "Defina quais perguntas de negócio você quer responder com dados",
+                "Organize e limpe os dados históricos (mínimo 6 meses)",
+                "Escolha o tipo de análise: classificação, previsão ou agrupamento",
+                "Implemente dashboards para visualizar os insights gerados pela IA"
+              ]
+            }
+          ]
+        },
+        "faq": {
+          "title": "Perguntas Frequentes",
+          "items": [
+            { "question": "Preciso ter muitos dados para usar IA?", "answer": "Depende da solução. Chatbots com LLMs funcionam bem com uma base de conhecimento textual. Já análise preditiva precisa de dados históricos — geralmente pelo menos 6 meses de dados." },
+            { "question": "A IA vai substituir meus funcionários?", "answer": "A IA é uma ferramenta para potencializar sua equipe, não substituí-la. Ela assume tarefas repetitivas e de baixo valor, permitindo que seus colaboradores foquem em atividades estratégicas." },
+            { "question": "Os dados ficam seguros?", "answer": "Absolutamente. Implementamos todas as medidas de segurança e privacidade, incluindo criptografia, controle de acesso e conformidade com LGPD. Para casos sensíveis, usamos modelos rodando localmente." },
+            { "question": "Quanto custa implementar IA?", "answer": "Chatbots simples a partir de R$ 5.000. Soluções de análise preditiva de R$ 15.000 a R$ 50.000. Projetos de visão computacional a partir de R$ 20.000. Cada caso é orçado individualmente." },
+            { "question": "Quanto tempo leva para implementar?", "answer": "Chatbots de 2 a 4 semanas. Soluções de análise preditiva de 4 a 8 semanas. Projetos de visão computacional de 6 a 12 semanas." }
+          ]
+        },
+        "cta": {
+          "title": "Pronto para implementar IA no seu negócio?",
+          "description": "Descubra como a inteligência artificial pode transformar seus processos, reduzir custos e criar novas oportunidades de receita.",
+          "button": "Solicitar Proposta"
+        }
+      }
+    ]
   }
 }

@@ -8,6 +8,7 @@ import { AuthProvider } from "@/hooks/useAuth";
 import { CookieConsent } from "@/components/CookieConsent";
 import Index from "./pages/Index";
 import ServicosPage from "./pages/ServicosPage";
+import ServiceDetailPage from "./pages/ServiceDetailPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import SobrePage from "./pages/SobrePage";
 import PlanosPage from "./pages/PlanosPage";
@@ -36,6 +37,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/servicos" element={<ServicosPage />} />
+              <Route path="/servicos/:slug" element={<ServiceDetailPage />} />
               <Route path="/portfolio" element={<PortfolioPage />} />
               <Route path="/sobre" element={<SobrePage />} />
               <Route path="/planos" element={<PlanosPage />} />

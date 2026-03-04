@@ -7,6 +7,7 @@ import { getTechIcon } from "@/components/TechIcons";
 import { Globe, Server, Smartphone, Zap, Users, Brain, X } from "lucide-react";
 
 const icons = [Globe, Server, Smartphone, Zap, Users, Brain];
+const SERVICE_SLUGS = ["websites", "sistemas-web", "aplicativos-mobile", "automacoes", "consultoria", "inteligencia-artificial"];
 const tags = [
   ["React", "Next.js", "Tailwind", "WordPress"],
   ["Node.js", "Python", "PostgreSQL", "APIs"],
@@ -71,9 +72,9 @@ export const Services = ({ limit }: { limit?: number }) => {
                       </span>
                     ))}
                   </div>
-                  <button className="mt-4 text-sm text-primary hover:underline self-start">
+                  <Link to={`/servicos/${SERVICE_SLUGS[i]}`} className="mt-4 text-sm text-primary hover:underline self-start" onClick={(e) => e.stopPropagation()}>
                     {t("services.learnMore")}
-                  </button>
+                  </Link>
                 </TiltCard>
               </ScrollReveal>
             );
